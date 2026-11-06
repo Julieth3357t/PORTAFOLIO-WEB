@@ -46,6 +46,7 @@
     />
     <link rel="preload" as="image" href="./assets/images/julieth.webp" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/atmosfera.css" />
     <script>
       (function () {
         var root = document.documentElement;
@@ -66,6 +67,7 @@
     <script src="./assets/vendor/gsap/gsap.min.js" defer></script>
     <script src="./assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
     <script src="./assets/js/motion.js" defer></script>
+    <script src="./assets/js/atmosfera.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -81,6 +83,11 @@
     </script>
   </head>
   <body>
+    <div class="atmosfera" id="atmosfera" aria-hidden="true">
+      <div class="atmosfera-color"></div>
+      <div class="atmosfera-luz"></div>
+      <div class="atmosfera-cuadricula"></div>
+    </div>
     <svg class="icon-sprite" aria-hidden="true" focusable="false">
       <symbol id="i-whatsapp" viewBox="0 0 24 24">
         <path

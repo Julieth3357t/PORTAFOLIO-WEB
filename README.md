@@ -12,7 +12,7 @@ Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 - **Habilidades técnicas (`#habilidades`):** CapCut Pro (nivel 5), Figma (4), Photoshop (3) e Illustrator (3), en una escala del 1 al 5.
 - **Trabajos (`#trabajos`):** pestañas para **Videos de Boda**, **Videos de Proyectos** y **Proyectos Universitarios**, además de «Todos». Cada categoría se muestra en un **abanico**: una rueda roja que gira con las tarjetas y se maneja deslizando el dedo, con las flechas, con el teclado o con el trackpad. Al tocar una tarjeta lateral, esta pasa al centro; al tocar la central, se reproduce. «Ver todos» despliega la cuadrícula completa. Los videos se reproducen dentro de la página, sin abrir otras pestañas, con controles propios en rojo y negro: reproducir, barra de progreso, tiempo, volumen, pantalla completa y anterior/siguiente.
 - **Final (`#contacto`):** el bloque rojo de contacto aparece al llegar, con una luz que sigue al mouse y botones magnéticos. «Rebobinar al inicio» vuelve arriba con efecto VHS.
-- **Fondo:** toda la página pasa del negro del inicio a un rojo profundo al final.
+- **Fondo:** después del inicio, un degradado de negro a rojo con cuadrícula luminosa acompaña el desplazamiento. Con movimiento reducido, el fondo se mantiene fijo.
 - **Contacto:** WhatsApp `+591 75541660` (enlace `wa.me` con mensaje inicial), Instagram [@nabi\_\_films](https://www.instagram.com/nabi__films/) y correo `julieth3357t@gmail.com` (`mailto:`).
 
 > **Instagram:** el usuario correcto lleva **dos** guiones bajos: `@nabi__films`. La cuenta `@nabi_films`, con uno solo, pertenece a otra persona. El verificador impide publicar ese enlace por error.
