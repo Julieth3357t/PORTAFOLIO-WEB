@@ -156,9 +156,8 @@
         .fromTo(sweep, { "--sweep": "0deg" }, { "--sweep": "360deg", duration: 0.42, ease: "none" })
         .fromTo(count, { scale: 1.18, opacity: 0.45 }, { scale: 1, opacity: 1, duration: 0.42, ease: "power2.out" }, "<");
     });
-    // El iris descubre el reel y el retrato; el nombre sube mientras se abre.
+    // El iris descubre lo primero de la página: el video de presentación.
     tl.addLabel("iris")
-      .add(() => heroIn(false, true), "iris")
       .fromTo(intro, { "--hole": "0vmax" }, { "--hole": "150vmax", duration: 0.75, ease: "power3.in" }, "iris")
       .call(finish, null, "iris+=0.75");
     // Cualquier toque, tecla o desplazamiento salta la intro: nunca retiene al visitante.
@@ -173,11 +172,21 @@
           gsap.set(intro, { clearProps: "opacity" });
         },
       });
-      heroIn(false);
     }
     inputs.forEach((type) => window.addEventListener(type, skip, { passive: true }));
-  } else {
-    heroIn(true);
+  }
+
+  // El título de apertura se presenta cuando llega a la pantalla, después del video.
+  ScrollTrigger.create({ trigger: hero, start: "top 75%", once: true, onEnter: () => heroIn(true) });
+
+  // Al bajar, el video de presentación se aleja y se oscurece.
+  if ($("#presentacion")) {
+    gsap.to(".showreel-video", {
+      scale: 1.08,
+      opacity: 0.35,
+      ease: "none",
+      scrollTrigger: { trigger: "#presentacion", start: "top top", end: "bottom top", scrub: 0.6 },
+    });
   }
 
   /* ---------- Parallax al salir del título ---------- */

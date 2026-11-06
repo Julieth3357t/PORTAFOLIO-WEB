@@ -1,10 +1,6 @@
-/* Atmósfera: fondo fijo que pasa de negro a rojo con una cuadrícula de neón, como
-   la referencia. Reacciona al scroll y al mouse moviendo solo transform y opacity
+/* Atmósfera: fondo fijo que pasa de negro a rojo profundo, como la referencia. Reacciona al scroll y al mouse moviendo solo transform y opacity
    (el navegador no repinta la pantalla). */
 
-:root {
-  --cuadro: 96px;
-}
 html {
   background: #000;
   scrollbar-color: var(--red-deep) #000;
@@ -38,14 +34,14 @@ body {
   background: linear-gradient(
     180deg,
     transparent 0%,
-    transparent 28%,
-    #16020a 42%,
-    #3d0510 56%,
-    #73091a 72%,
-    #a80d1e 88%,
-    #d1121f 100%
+    transparent 40%,
+    #0f0205 54%,
+    #26030a 68%,
+    #470611 82%,
+    #6d0915 93%,
+    #8a0b19 100%
   );
-  transform: translate3d(0, -35vh, 0);
+  transform: translate3d(0, -30vh, 0);
   will-change: transform;
 }
 
@@ -55,46 +51,12 @@ body {
   right: -10%;
   bottom: -18vh;
   height: 60vh;
-  background: radial-gradient(50% 60% at 50% 100%, rgb(255 46 60 / 0.55), transparent 72%);
-  opacity: 0.3;
+  background: radial-gradient(50% 60% at 50% 100%, rgb(255 46 60 / 0.4), transparent 72%);
+  opacity: 0.25;
   will-change: opacity;
 }
 
-/* 3. Cuadrícula de neón: tenue arriba, intensa abajo, con parallax. */
-.atmosfera-cuadricula {
-  inset: 0;
-  -webkit-mask-image: linear-gradient(180deg, rgb(0 0 0 / 0.1) 0%, rgb(0 0 0 / 0.35) 40%, #000 100%);
-  mask-image: linear-gradient(180deg, rgb(0 0 0 / 0.1) 0%, rgb(0 0 0 / 0.35) 40%, #000 100%);
-  opacity: 0.4;
-  will-change: opacity;
-}
-.atmosfera-lineas,
-.atmosfera-brillo {
-  position: absolute;
-  top: calc(-1 * var(--cuadro));
-  left: 0;
-  right: 0;
-  height: calc(100% + 2 * var(--cuadro));
-  background-size: var(--cuadro) var(--cuadro);
-  will-change: transform;
-}
-.atmosfera-lineas {
-  background-image:
-    linear-gradient(rgb(255 50 62 / 0.75) 0 1.5px, transparent 1.5px),
-    linear-gradient(90deg, rgb(255 50 62 / 0.75) 0 1.5px, transparent 1.5px);
-}
-/* Halo sin desenfoque: una franja ancha y tenue centrada en cada línea. */
-.atmosfera-brillo {
-  background-image:
-    linear-gradient(rgb(255 50 62 / 0.22) 0 7px, transparent 7px),
-    linear-gradient(90deg, rgb(255 50 62 / 0.22) 0 7px, transparent 7px);
-  background-position:
-    0 -2.75px,
-    -2.75px 0;
-  opacity: 0.45;
-}
-
-/* 4. Luz que sigue al mouse (en pantallas táctiles cruza la pantalla con el scroll). */
+/* 3. Luz que sigue al mouse (en pantallas táctiles cruza la pantalla con el scroll). */
 .atmosfera-luz {
   top: 0;
   left: 0;
@@ -104,8 +66,8 @@ body {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgb(255 60 72 / 0.3),
-    rgb(255 30 45 / 0.1) 40%,
+    rgb(255 60 72 / 0.2),
+    rgb(255 30 45 / 0.06) 40%,
     transparent 68%
   );
   mix-blend-mode: screen;
@@ -113,7 +75,7 @@ body {
   will-change: transform;
 }
 
-/* 5. Grano fijo: evita las bandas visibles en los degradados oscuros. */
+/* 4. Grano fijo: evita las bandas visibles en los degradados oscuros. */
 .atmosfera-grano {
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -122,9 +84,6 @@ body {
 }
 
 @media (max-width: 760px) {
-  :root {
-    --cuadro: 64px;
-  }
   .atmosfera-luz {
     width: 120vmax;
     height: 120vmax;

@@ -47,6 +47,7 @@
     <link rel="preload" as="image" href="./assets/images/julieth.webp" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/atmosfera.css" />
+    <link rel="stylesheet" href="./assets/css/presentacion.css" />
     <script>
       (function () {
         var root = document.documentElement;
@@ -68,6 +69,7 @@
     <script src="./assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
     <script src="./assets/js/motion.js" defer></script>
     <script src="./assets/js/atmosfera.js" defer></script>
+    <script src="./assets/js/presentacion.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -86,10 +88,6 @@
     <div class="atmosfera" id="atmosfera" aria-hidden="true">
       <div class="atmosfera-color"></div>
       <div class="atmosfera-horizonte"></div>
-      <div class="atmosfera-cuadricula">
-        <div class="atmosfera-lineas"></div>
-        <div class="atmosfera-brillo"></div>
-      </div>
       <div class="atmosfera-luz"></div>
       <div class="atmosfera-grano"></div>
     </div>
@@ -278,6 +276,58 @@
     </header>
 
     <main>
+      <section
+        class="showreel"
+        id="presentacion"
+        aria-label="Video de presentación: Portafolio personal 2026"
+      >
+        <video
+          class="showreel-video"
+          id="showreel-video"
+          muted
+          loop
+          playsinline
+          controls
+          preload="auto"
+          poster="./assets/posters/portafolio-personal-2026.jpg"
+          aria-label="Portafolio personal 2026, presentación de Julieth"
+        >
+          <source
+            src="./assets/videos/portafolio-personal-2026.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="showreel-shade" aria-hidden="true"></div>
+        <button
+          class="showreel-play"
+          id="showreel-play"
+          type="button"
+          aria-label="Reproducir la presentación"
+          hidden
+        >
+          <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
+        </button>
+        <div class="showreel-bar">
+          <button
+            class="showreel-sound"
+            id="showreel-sound"
+            type="button"
+            aria-pressed="false"
+          >
+            <svg class="icon icon-muted" aria-hidden="true">
+              <use href="#i-muted"></use>
+            </svg>
+            <svg class="icon icon-volume" aria-hidden="true">
+              <use href="#i-volume"></use>
+            </svg>
+            <span>Activar sonido</span>
+          </button>
+          <a class="showreel-next" href="#inicio"
+            ><span>Seguir</span><i aria-hidden="true"></i
+          ></a>
+        </div>
+      </section>
+
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero-screen" aria-hidden="true">
           <video
