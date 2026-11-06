@@ -1,4 +1,4 @@
-# Portafolio audiovisual de Julieth / Nicol Moya Quispe
+# Portafolio audiovisual de Julieth Moya Quispe
 
 Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de catorce videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
 
@@ -7,7 +7,7 @@ Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 ## Qué incluye
 
 - **Intro (primera visita):** cuenta regresiva de película 3·2·1 que se abre en iris sobre el título. Dura menos de 2 segundos, aparece una vez por sesión y se salta con cualquier toque, tecla o desplazamiento.
-- **Inicio (`#inicio`):** título de apertura a pantalla completa. Detrás corre un reel en rojo y negro hecho con los videos del portafolio; encima, grano de película, visor de cámara con código de tiempo, bandas de cinemascope y el retrato. Se ve «Portafolio», el nombre «Julieth / Nicol Moya Quispe», los accesos a WhatsApp, Instagram y correo y la biografía. Al desplazar hay parallax.
+- **Inicio (`#inicio`):** título de apertura a pantalla completa. Detrás corre un reel en rojo y negro hecho con los videos del portafolio; encima, grano de película, visor de cámara con código de tiempo, bandas de cinemascope y el retrato. Se ve «Portafolio», el nombre «Julieth Moya Quispe», los accesos a WhatsApp, Instagram y correo y la biografía. Al desplazar hay parallax.
 - **Habilidades (`#habilidades`):** el título, el panel y las filas aparecen al llegar. Los niveles cuentan hasta su valor mientras el cabezal recorre la pista, y el panel se inclina con el mouse.
 - **Habilidades técnicas (`#habilidades`):** CapCut Pro (nivel 5), Figma (4), Photoshop (3) e Illustrator (3), en una escala del 1 al 5.
 - **Trabajos (`#trabajos`):** pestañas para **Videos de Boda**, **Videos de Proyectos** y **Proyectos Universitarios**, además de «Todos». Cada categoría se muestra en un **abanico**: una rueda roja que gira con las tarjetas y se maneja deslizando el dedo, con las flechas, con el teclado o con el trackpad. Al tocar una tarjeta lateral, esta pasa al centro; al tocar la central, se reproduce. «Ver todos» despliega la cuadrícula completa. Los videos se reproducen dentro de la página, sin abrir otras pestañas, con controles propios en rojo y negro: reproducir, barra de progreso, tiempo, volumen, pantalla completa y anterior/siguiente.

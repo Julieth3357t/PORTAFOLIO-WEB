@@ -41,7 +41,7 @@ Los títulos descriptivos asignados a archivos genéricos sirven para navegar la
 
 ## Decisiones para el portafolio
 
-El nombre Nabi Films y los contactos vienen del Instagram y los datos facilitados por la usuaria. La especificación posterior fija el nombre como «Julieth / Nicol Moya Quispe» y el Instagram correcto es `@nabi__films`, con dos guiones bajos. `@nabi_films`, con uno solo, es otra cuenta.
+El nombre Nabi Films y los contactos vienen del Instagram y los datos facilitados por la usuaria. El nombre es «Julieth Moya Quispe» y el Instagram correcto es `@nabi__films`, con dos guiones bajos. `@nabi_films`, con uno solo, es otra cuenta.
 
 **Clasificación actual (especificación de rediseño):** la galería usa tres categorías exactas.
 
