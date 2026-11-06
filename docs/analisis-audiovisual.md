@@ -42,8 +42,8 @@ El nombre Nabi Films y los contactos vienen del Instagram y los datos facilitado
 **Clasificación actual (especificación de rediseño):** la galería usa tres categorías exactas.
 
 - **Videos de Boda:** Rosa Andrea.
-- **Videos de Entrevista:** Voces del equipo, Personas en acción, Dentro del equipo (Sofía), La Cabaña en Expocruz y Del proceso al resultado. Son formatos corporativos y documentales con presentación o diálogo a cámara.
-- **Proyectos:** Una esencia, una historia; Cambia el chip; Hacer un video es un arte y Lo que no se ve. Son spots, campañas y montajes híbridos.
+- **Videos de Proyectos** (antes «Videos de Entrevista»): Voces del equipo, Personas en acción, Dentro del equipo (Sofía), La Cabaña en Expocruz y Del proceso al resultado. Son formatos corporativos y documentales con presentación o diálogo a cámara.
+- **Proyectos Universitarios** (antes «Proyectos»): Una esencia, una historia; Cambia el chip; Hacer un video es un arte y Lo que no se ve. Son spots, campañas y montajes híbridos.
 
 Las piezas de Sofía tienen nombres diferenciados para que el visitante entienda su enfoque, aunque sus archivos originales se llamaban `1106`.
 

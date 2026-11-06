@@ -911,6 +911,89 @@
     if (event.matches) closeMenu();
   });
 
+  /* ---------- Cabecera: vidrio al desplazar, línea de progreso y sección activa ---------- */
+
+  const header = $("#site-header");
+  const progressBar = $(".header-progress-bar");
+  const progressHead = $(".header-progress-head");
+  const indicator = $(".nav-indicator");
+  const navLinks = [...nav.querySelectorAll("a[data-section]")];
+  let lastScroll = window.scrollY;
+  let scrollFrame = 0;
+  let activeLink = null;
+
+  function paintHeader() {
+    scrollFrame = 0;
+    const y = Math.max(window.scrollY, 0);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? Math.min(y / max, 1) : 0;
+    progressBar.style.transform = `scaleX(${progress.toFixed(4)})`;
+    progressHead.style.transform = `translateX(${(progress * header.clientWidth).toFixed(1)}px)`;
+    header.classList.toggle("is-scrolled", y > 8);
+    const delta = y - lastScroll;
+    if (Math.abs(delta) > 6) {
+      const keyboardInside = header.contains(document.activeElement) && document.activeElement.matches(":focus-visible");
+      header.classList.toggle(
+        "is-hidden",
+        delta > 0 && y > 320 && !nav.classList.contains("is-open") && !keyboardInside,
+      );
+      lastScroll = y;
+    }
+    if (y <= 320) header.classList.remove("is-hidden");
+  }
+
+  function moveIndicator() {
+    const hidden = getComputedStyle(indicator).display === "none";
+    if (!activeLink || activeLink.classList.contains("nav-contact") || hidden) {
+      indicator.style.opacity = "0";
+      return;
+    }
+    const inset = 16;
+    indicator.style.transform = `translateX(${activeLink.offsetLeft + inset}px) scaleX(${(
+      (activeLink.offsetWidth - inset * 2) / 100
+    ).toFixed(3)})`;
+    indicator.style.opacity = "1";
+    // El primer posicionamiento es directo; los siguientes se deslizan.
+    if (!indicator.classList.contains("is-ready"))
+      requestAnimationFrame(() => indicator.classList.add("is-ready"));
+  }
+
+  function setActiveSection(id) {
+    activeLink = navLinks.find((link) => link.dataset.section === id) || null;
+    for (const link of navLinks) {
+      if (link === activeLink) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
+    moveIndicator();
+  }
+
+  if ("IntersectionObserver" in window) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) if (entry.isIntersecting) setActiveSection(entry.target.id);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    for (const id of ["inicio", ...navLinks.map((link) => link.dataset.section)]) {
+      const section = document.getElementById(id);
+      if (section) spy.observe(section);
+    }
+  }
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!scrollFrame) scrollFrame = requestAnimationFrame(paintHeader);
+    },
+    { passive: true },
+  );
+  window.addEventListener("resize", () => {
+    paintHeader();
+    moveIndicator();
+  });
+  header.addEventListener("focusin", () => header.classList.remove("is-hidden"));
+  if (document.fonts) document.fonts.ready.then(moveIndicator);
+  paintHeader();
+
   $("#year").textContent = String(new Date().getFullYear());
   selectTab(tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0]);
 })();

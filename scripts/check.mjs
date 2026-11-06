@@ -114,8 +114,8 @@ const projects = context.window.PORTFOLIO_PROJECTS;
 const categories = context.window.PORTFOLIO_CATEGORIES;
 validate(
   JSON.stringify(categories.map((category) => category.label)) ===
-    JSON.stringify(["Videos de Boda", "Videos de Entrevista", "Proyectos"]),
-  "Las categorías deben ser exactamente: Videos de Boda, Videos de Entrevista y Proyectos.",
+    JSON.stringify(["Videos de Boda", "Videos de Proyectos", "Proyectos Universitarios"]),
+  "Las categorías deben ser exactamente: Videos de Boda, Videos de Proyectos y Proyectos Universitarios.",
 );
 validate(
   Array.isArray(projects) && projects.length === 10,

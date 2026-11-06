@@ -9,13 +9,13 @@ window.PORTFOLIO_CATEGORIES = [
   },
   {
     id: "entrevista",
-    label: "Videos de Entrevista",
+    label: "Videos de Proyectos",
     description: "Formatos documentales, corporativos y de diálogo.",
   },
   {
     id: "proyectos",
-    label: "Proyectos",
-    description: "Diseños, campañas y formatos híbridos.",
+    label: "Proyectos Universitarios",
+    description: "Diseños, campañas y formatos híbridos hechos en la universidad.",
   },
 ];
 

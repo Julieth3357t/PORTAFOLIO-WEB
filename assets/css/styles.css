@@ -140,7 +140,7 @@ ul {
   margin-inline: auto;
 }
 .section-space {
-  padding-block: clamp(72px, 10vw, 136px);
+  padding-block: clamp(36px, 4.5vw, 60px);
 }
 .skip-link {
   position: fixed;
@@ -204,10 +204,54 @@ ul {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgb(0 0 0 / 0.9);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.35s var(--ease-out);
+}
+/* Al desplazar, la barra pasa de transparente a vidrio oscuro con filo rojo. */
+.site-header.is-scrolled {
+  background: rgb(0 0 0 / 0.82);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+  border-bottom-color: rgb(255 43 58 / 0.2);
+  box-shadow: 0 14px 30px -22px rgb(255 43 58 / 0.7);
+}
+/* Al bajar se oculta y deja a la vista la línea de progreso; al subir vuelve. */
+.site-header.is-hidden {
+  transform: translateY(calc(-100% + 3px));
+}
+.header-progress {
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 4px;
+  pointer-events: none;
+}
+.header-progress-bar {
+  position: absolute;
+  inset: 1px 0;
+  background: linear-gradient(90deg, #6d0812, var(--red));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+.header-progress-head {
+  /* Cabezal rojo, como el de una línea de tiempo de edición. */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 10px var(--red);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.site-header.is-scrolled .header-progress-head {
+  opacity: 1;
 }
 .header-inner {
   height: 72px;
@@ -233,11 +277,13 @@ ul {
   box-shadow: 0 0 12px rgb(255 43 58 / 0.9);
 }
 .main-nav {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .main-nav a {
+  position: relative;
   padding: 10px 16px;
   border-radius: 999px;
   color: var(--muted);
@@ -248,8 +294,31 @@ ul {
     background-color 0.2s,
     box-shadow 0.2s;
 }
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a[aria-current] {
   color: var(--text);
+}
+.main-nav .nav-contact[aria-current] {
+  background: var(--red-deep);
+}
+.nav-indicator {
+  /* Subrayado que se desliza hasta la sección visible. */
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--red);
+  box-shadow: 0 0 10px rgb(255 43 58 / 0.8);
+  opacity: 0;
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+.nav-indicator.is-ready {
+  transition:
+    transform 0.35s var(--ease-out),
+    opacity 0.2s;
 }
 .main-nav .nav-contact {
   margin-left: 8px;
@@ -265,61 +334,144 @@ ul {
 .menu-toggle {
   display: none;
 }
+@media (prefers-reduced-motion: no-preference) {
+  .site-header {
+    animation: header-in 0.6s var(--ease-out);
+  }
+  .main-nav > a {
+    animation: nav-in 0.45s var(--ease-out) backwards;
+    animation-delay: calc(140ms + var(--i, 0) * 60ms);
+  }
+}
+@keyframes header-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
 
-/* ---------- Hero ---------- */
+
+/* ---------- Hero: la claqueta ---------- */
 
 .hero {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
-}
-.hero::before {
-  /* Retícula tenue, como la guía de un visor de cámara. */
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image:
-    linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
-  background-size: 72px 72px;
-  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 72% 40%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse 75% 70% at 72% 40%, #000 0%, transparent 75%);
+  padding-block: clamp(20px, 2.4vw, 32px) clamp(4px, 1vw, 12px);
 }
 .hero::after {
+  /* Luz roja de set detrás de la claqueta. */
   content: "";
   position: absolute;
   z-index: -1;
-  width: min(900px, 90vw);
-  aspect-ratio: 1;
-  right: -18%;
-  top: -10%;
-  background: radial-gradient(closest-side, rgb(209 15 34 / 0.36), transparent);
+  inset: 8% 0 0;
+  background: radial-gradient(55% 60% at 72% 45%, rgb(209 15 34 / 0.2), transparent 70%);
   pointer-events: none;
 }
-.hero-inner {
+.slate {
+  --slate-line: rgb(255 255 255 / 0.13);
+  --slate-pad: clamp(18px, 2.1vw, 28px);
+  --clapper-h: clamp(28px, 2.6vw, 34px);
+  --clap-open: -9deg;
+  position: relative;
+  padding-top: calc(var(--clapper-h) * 2);
+}
+
+/* Palos de la claqueta: rayas rojas y negras en direcciones opuestas. */
+.slate-clapper {
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(var(--clapper-h) * 2);
+}
+.clapper-arm,
+.clapper-base {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--clapper-h);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+}
+.clapper-arm {
+  top: 0;
+  border-radius: 12px 12px 3px 3px;
+  background: repeating-linear-gradient(-58deg, var(--red-deep) 0 24px, #050505 24px 48px);
+  transform-origin: 14px 100%;
+}
+.clapper-base {
+  top: var(--clapper-h);
+  border-radius: 3px 3px 0 0;
+  background: repeating-linear-gradient(58deg, var(--red-deep) 0 24px, #050505 24px 48px);
+}
+.clapper-hinge {
+  position: absolute;
+  top: calc(var(--clapper-h) - 8px);
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e6e6e6 0 28%, #6d6d6d 32% 62%, #1c1c1c 66%);
+  box-shadow: 0 0 0 2px #000;
+}
+
+/* Pizarra: celdas separadas por líneas finas, como los campos de una claqueta real. */
+.slate-board {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
-  gap: clamp(32px, 5vw, 80px);
-  align-items: center;
-  padding-block: clamp(40px, 6vw, 88px) clamp(56px, 7vw, 104px);
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+  background: linear-gradient(172deg, #131313 0%, #080808 75%);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.1),
+    var(--glow);
 }
-.hero-title {
-  font-weight: 800;
+.slate-fields {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  container-type: inline-size;
 }
-.hero-kicker {
+.slate-title {
   display: block;
-  color: var(--red);
-  font-size: clamp(26px, 3vw, 40px);
-  font-weight: 600;
+}
+.slate-cell {
+  display: block;
+  padding: var(--slate-pad);
+}
+.slate-cell[data-label]::before,
+.slate-label,
+.slate-meta dt {
+  display: block;
+  margin-bottom: 8px;
+  color: #8f8f8f;
+  font-size: 12px;
+  font-weight: 700;
   font-stretch: 100%;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.25em;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
-.hero-name {
-  display: block;
-  font-size: clamp(54px, 8.6vw, 132px);
+.slate-cell[data-label]::before {
+  /* Etiqueta impresa de la claqueta; no forma parte del título accesible. */
+  content: attr(data-label);
+  content: attr(data-label) / "";
+}
+.slate-production {
+  color: var(--red);
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 700;
+  font-stretch: 100%;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.slate-direction {
+  border-top: 1px solid var(--slate-line);
+  font-size: clamp(56px, 17.5vw, 100px);
+  font-weight: 800;
   font-stretch: 75%;
   line-height: 0.88;
   letter-spacing: -0.025em;
@@ -330,134 +482,217 @@ ul {
 .hero-slash {
   color: var(--red);
   font-weight: 300;
-  text-shadow: 0 0 28px rgb(255 43 58 / 0.6);
+}
+.slate-contact {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--slate-line);
+}
+.slate-contact li + li {
+  border-left: 1px solid var(--slate-line);
+}
+.slate-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100%;
+  min-height: 76px;
+  padding: 12px 8px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+.slate-link .icon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  color: var(--red);
+}
+.slate-link-text {
+  display: grid;
+  min-width: 0;
+}
+.slate-link-name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.slate-link-value {
+  display: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.slate-link-primary {
+  background: var(--red-deep);
+  color: #fff;
+}
+.slate-link-primary .icon,
+.slate-link-primary .slate-link-value {
+  color: #fff;
+}
+.slate-link:active {
+  background-color: rgb(255 43 58 / 0.18);
+}
+.slate-link-primary:active {
+  background-color: var(--red-hover);
+}
+@media (hover: hover) and (pointer: fine) {
+  .slate-link:hover {
+    background-color: rgb(255 43 58 / 0.12);
+  }
+  .slate-link-primary:hover {
+    background-color: var(--red-hover);
+  }
+}
+.slate-synopsis {
+  border-top: 1px solid var(--slate-line);
 }
 .hero-lead {
-  margin-top: clamp(28px, 3.4vw, 44px);
-  max-width: 34ch;
-  font-size: clamp(20px, 1.8vw, 25px);
+  max-width: 40ch;
+  font-size: clamp(19px, 1.6vw, 22px);
   font-weight: 600;
   line-height: 1.3;
 }
 .hero-bio {
-  margin-top: 14px;
-  max-width: 60ch;
+  max-width: 66ch;
+  margin-top: 10px;
   color: var(--text-soft);
-  font-size: clamp(16px, 1.25vw, 18px);
-  line-height: 1.65;
+  font-size: clamp(16px, 1.15vw, 17px);
+  line-height: 1.6;
 }
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px 20px;
-  margin-top: clamp(28px, 3vw, 40px);
-}
-.quick-contact {
-  display: flex;
-  gap: 12px;
-}
-.quick-link {
-  position: relative;
+.slate-side {
   display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--carbon);
-  box-shadow: inset 0 0 0 1px var(--red-line);
-  transition:
-    background-color 0.2s,
-    box-shadow 0.2s,
-    transform 0.2s var(--ease-out);
+  grid-template-rows: minmax(0, 1fr) auto;
+  border-top: 1px solid var(--slate-line);
 }
-.quick-link-primary {
-  background: var(--red-deep);
-  box-shadow: 0 10px 30px -10px rgb(255 43 58 / 0.7);
-}
-.quick-link::after {
-  /* Etiqueta breve al pasar el cursor o enfocar. */
-  content: attr(data-label);
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: #fff;
-  color: #000;
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -4px);
-  transition:
-    opacity 0.15s,
-    transform 0.15s var(--ease-out);
-}
-.quick-link:focus-visible::after {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-@media (hover: hover) and (pointer: fine) {
-  .quick-link:hover {
-    background: var(--red-hover);
-    box-shadow: var(--glow-strong);
-  }
-  .quick-link:hover::after {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-.quick-link:active {
-  transform: scale(0.94);
-}
-
-.hero-portrait {
+.slate-photo {
   position: relative;
-  border-radius: var(--radius-panel);
-  overflow: hidden;
   aspect-ratio: 4 / 5;
   background: #3a0007;
-  box-shadow: var(--glow-strong);
 }
-.hero-portrait img {
+.slate-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 22%;
+  object-position: 50% 18%;
 }
-.portrait-overlay {
+.slate-photo figcaption {
   position: absolute;
-  inset: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  pointer-events: none;
+  inset: auto 0 0;
+  padding: 48px var(--slate-pad) var(--slate-pad);
+  background: linear-gradient(to top, rgb(0 0 0 / 0.85), transparent);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
 }
-.rec-chip,
-.place-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgb(0 0 0 / 0.55);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  font-size: 14px;
+.slate-photo figcaption .slate-label {
+  color: #c4c4c4;
+}
+.slate-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--slate-line);
+}
+.slate-meta div {
+  padding: 14px var(--slate-pad);
+}
+.slate-meta div:nth-child(odd) {
+  border-right: 1px solid var(--slate-line);
+}
+.slate-meta div:nth-child(-n + 2) {
+  border-bottom: 1px solid var(--slate-line);
+}
+.slate-meta dt {
+  margin-bottom: 4px;
+}
+.slate-meta dd {
+  font-size: 17px;
   font-weight: 600;
+  line-height: 1.3;
 }
-.rec-chip {
-  letter-spacing: 0.06em;
+
+/* La claqueta se cierra una vez al cargar: el «¡acción!» del portafolio. */
+@media (prefers-reduced-motion: no-preference) {
+  .clapper-arm {
+    animation: clap 0.6s 0.45s both;
+  }
+  .slate-board {
+    animation: clap-jolt 0.28s 0.82s;
+  }
 }
-.rec-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 0 10px var(--red);
+@keyframes clap {
+  0% {
+    transform: rotate(var(--clap-open));
+    /* Caída que acelera hasta el golpe, como el palo real. */
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  62% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  80% {
+    transform: rotate(calc(var(--clap-open) * 0.12));
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@media (min-width: 1100px) {
+  .slate-direction {
+    font-size: min(10.8cqw, 128px);
+    white-space: nowrap;
+  }
+  .hero-name-line {
+    display: inline;
+  }
+}
+@keyframes clap-jolt {
+  35% {
+    transform: translateY(3px);
+  }
+}
+
+@media (min-width: 900px) {
+  .slate {
+    --clap-open: -5deg;
+  }
+  .slate-board {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
+  }
+  .slate-direction {
+    font-size: clamp(64px, 7.4vw, 100px);
+  }
+  .slate-synopsis {
+    flex: 1;
+  }
+  .slate-link {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 76px;
+    padding: 12px var(--slate-pad);
+    text-align: left;
+  }
+  .slate-link-name {
+    font-size: 16px;
+  }
+  .slate-link-value {
+    display: block;
+  }
+  .slate-side {
+    border-top: 0;
+    border-left: 1px solid var(--slate-line);
+  }
+  .slate-photo {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
 }
 
 /* ---------- Encabezados de sección ---------- */
@@ -1624,8 +1859,8 @@ html:not(.js) .fan {
   padding: clamp(28px, 6vw, 76px);
   border-radius: var(--radius-panel);
   background:
-    radial-gradient(110% 120% at 100% 0%, rgb(209 15 34 / 0.62), transparent 58%),
-    var(--panel-bg);
+    radial-gradient(85% 110% at 0% 0%, rgb(255 43 58 / 0.45), transparent 62%),
+    linear-gradient(150deg, #b10e1f 0%, #6a0a14 38%, #240a0d 72%, #0c0c0c 100%);
   box-shadow: var(--glow-strong);
 }
 .contact-panel h2 {
@@ -1639,7 +1874,7 @@ html:not(.js) .fan {
 .contact-panel > p {
   max-width: 46ch;
   margin-top: 22px;
-  color: var(--text-soft);
+  color: var(--text);
   font-size: clamp(17px, 1.4vw, 20px);
 }
 .contact-grid {
@@ -1738,15 +1973,6 @@ html:not(.js) .fan {
 }
 
 @media (max-width: 860px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-  .hero-name {
-    font-size: clamp(54px, 17.5vw, 124px);
-  }
-  .hero-portrait {
-    width: min(100%, 440px);
-  }
   .player-layout {
     grid-template-columns: 1fr;
   }
@@ -1802,6 +2028,20 @@ html:not(.js) .fan {
   }
   .main-nav.is-open {
     display: flex;
+  }
+  .nav-indicator {
+    display: none;
+  }
+  .main-nav a[aria-current]:not(.nav-contact)::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 10px 2px 0;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 8px var(--red);
+    vertical-align: middle;
   }
   .main-nav a {
     padding: 14px 18px;
@@ -1900,9 +2140,6 @@ html:not(.js) .fan {
   .chip {
     font-size: 12px;
     padding: 4px 10px;
-  }
-  .hero-actions .button {
-    flex: 1 0 auto;
   }
   .contact-panel {
     padding: 22px;
