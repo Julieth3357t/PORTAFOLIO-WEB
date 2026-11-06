@@ -90,9 +90,14 @@
     const tl = gsap.timeline({ defaults: { ease } });
     const bars = $$(".letterbox");
     if (withShutter) {
-      tl.fromTo(bars, { scaleY: 1 }, { scaleY: 0.09, duration: 1.2, ease: "power4.inOut" });
+      tl.fromTo(bars, { scaleY: 1 }, { scaleY: 0.09, duration: 1.2, ease: "power4.inOut" }).to(
+        ".letterbox-bottom",
+        { opacity: 0, duration: 0.8, ease: "power2.out" },
+        ">-0.3",
+      );
     } else {
       gsap.set(bars, { scaleY: 0.09 });
+      gsap.set(".letterbox-bottom", { opacity: 0 });
     }
     if (mediaShown) {
       gsap.set(".hero-reel", { opacity: 0.62 });

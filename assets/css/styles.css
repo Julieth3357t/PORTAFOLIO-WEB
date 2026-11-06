@@ -19,7 +19,7 @@
   --line: #2a2a2a;
   --text: #f4f4f4;
   --text-soft: #d4d4d4;
-  --muted: #a3a3a3;
+  --muted: #b8b8b8;
   --red: #ff2b3a;
   --red-deep: #d10f22;
   /* Rojo de hover: mantiene 4.8:1 con texto blanco. */
@@ -381,12 +381,15 @@ ul {
   margin-top: calc(-1 * var(--header-h));
   padding: calc(var(--header-h) + 56px) 0 clamp(64px, 9vh, 104px);
   overflow: hidden;
-  background: #000;
+  background: transparent;
 }
 .hero-screen {
   position: absolute;
   z-index: -3;
   inset: 0;
+  background: #000;
+  -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
 }
 .hero-reel {
   display: block;
@@ -520,6 +523,8 @@ ul {
   transform-origin: 50% 0;
 }
 .letterbox-bottom {
+  /* Se desvanece tras la apertura para no cortar la unión con el fondo. */
+  opacity: 0;
   bottom: 0;
   transform-origin: 50% 100%;
 }
@@ -680,6 +685,9 @@ html.anim .hero-scroll {
 }
 html.anim .letterbox {
   transform: scaleY(1);
+}
+html.anim .letterbox-bottom {
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1516,7 +1524,9 @@ html:not(.js) .fan {
   box-shadow: inset 0 0 0 1px var(--red-line);
 }
 .chip-outline {
-  color: var(--red);
+  /* Fondo oscuro para que el texto rojo se lea sobre la atmósfera roja. */
+  background: rgb(0 0 0 / 0.55);
+  color: #ff5a66;
 }
 .chip-warning {
   color: #ff8a93;
@@ -2100,7 +2110,7 @@ html:not(.js) .fan {
   justify-content: space-between;
   gap: 12px 24px;
   padding-top: 28px;
-  color: var(--muted);
+  color: rgb(255 255 255 / 0.88);
   font-size: 14px;
 }
 .footer-bottom a {
@@ -2148,7 +2158,7 @@ html:not(.js) .fan {
 .rewind .icon {
   width: 18px;
   height: 18px;
-  color: var(--red);
+  color: #fff;
 }
 .rewind-overlay {
   /* Efecto VHS al rebobinar: líneas, temblor y la marca ◀◀. */
