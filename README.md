@@ -7,7 +7,7 @@ Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 ## Qué incluye
 
 - **Intro (primera visita):** cuenta regresiva de película 3·2·1 que se abre en iris sobre el título. Dura menos de 2 segundos, aparece una vez por sesión y se salta con cualquier toque, tecla o desplazamiento.
-- **Presentación (`#presentacion`):** lo primero que se ve es el video «Portafolio personal 2026» a pantalla completa. Arranca solo y en silencio (los navegadores no permiten sonido automático); «Activar sonido» lo reinicia con audio. «Seguir» baja al título. Se pausa cuando no está a la vista. Estilos y lógica en `assets/css/presentacion.css` y `assets/js/presentacion.js`.
+- **Presentación (`#presentacion`):** lo primero que se ve es el video «Portafolio personal 2026» en alta resolución y sin recortar. Arranca solo y en silencio (los navegadores no permiten sonido automático); «Activar sonido» lo reinicia con audio. «Seguir» baja al título. Se pausa cuando no está a la vista. Estilos y lógica en `assets/css/presentacion.css` y `assets/js/presentacion.js`.
 - **Inicio (`#inicio`):** título de apertura a pantalla completa. Detrás corre un reel en rojo y negro hecho con los videos del portafolio; encima, grano de película, visor de cámara con código de tiempo, bandas de cinemascope y el retrato. Se ve «Portafolio», el nombre «Julieth», los accesos a WhatsApp, Instagram y correo y la biografía. Al desplazar hay parallax.
 - **Habilidades (`#habilidades`):** el título, el panel y las filas aparecen al llegar. Los niveles cuentan hasta su valor mientras el cabezal recorre la pista, y el panel se inclina con el mouse.
 - **Habilidades técnicas (`#habilidades`):** CapCut Pro (nivel 5), Figma (4), Photoshop (3) e Illustrator (3), en una escala del 1 al 5.
@@ -110,5 +110,7 @@ npm.cmd run build
 La correspondencia entre archivos originales y nombres web está en `scripts/media-manifest.json`.
 
 Para regenerar solo algunas piezas, pasar sus identificadores al script, por ejemplo `node scripts/prepare-media.mjs boda-eidy-carlos distrito-10-version-1`. Las demás versiones web se mantienen sin cambios.
+
+La copia de mayor calidad usada al inicio se genera desde `media/originales/Portafolio 2026.mp4` con `node scripts/prepare-presentation-hd.mjs`. Conserva la resolución original y pesa menos de 24 MiB. La versión de la galería se mantiene separada.
 
 El reel del inicio (`assets/videos/reel.mp4`, unos 0,9 MiB, y su portada `assets/images/reel-poster.jpg`) se regenera con `node scripts/make-reel.mjs`. Ahí se eligen los fragmentos; no incluye la pieza sensible ni el montaje con escenas de terceros.

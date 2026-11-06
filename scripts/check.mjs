@@ -201,6 +201,15 @@ for (const file of ["assets/js/app.js", "assets/js/data.js"])
     filename: file,
   });
 
+// La presentación HD también debe poder subirse y reproducirse desde Pages.
+const presentation = "assets/videos/presentacion-2026-hd.mp4";
+if (!(await existsExactly(presentation))) {
+  errors.push(`Falta ${presentation}`);
+} else {
+  const { size } = await stat(path.join(root, presentation));
+  validate(size > 0 && size < 24 * 1024 * 1024, `Tamaño no válido para ${presentation}`);
+}
+
 // Evitar que git add . incluya originales o binarios demasiado grandes.
 const candidates = execFileSync(
   "git",

@@ -179,11 +179,10 @@
   // El título de apertura se presenta cuando llega a la pantalla, después del video.
   ScrollTrigger.create({ trigger: hero, start: "top 75%", once: true, onEnter: () => heroIn(true) });
 
-  // Al bajar, el video de presentación se aleja y se oscurece.
+  // Al bajar, la presentación se desvanece suavemente sin recortar la imagen.
   if ($("#presentacion")) {
     gsap.to(".showreel-video", {
-      scale: 1.08,
-      opacity: 0.35,
+      opacity: 0.8,
       ease: "none",
       scrollTrigger: { trigger: "#presentacion", start: "top top", end: "bottom top", scrub: 0.6 },
     });

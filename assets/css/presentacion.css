@@ -21,7 +21,7 @@
   position: absolute;
   z-index: -1;
   inset: -40px;
-  background: url("../posters/portafolio-personal-2026.jpg") center / cover;
+  background: url("../posters/presentacion-2026-hd.jpg") center / cover;
   filter: blur(28px) brightness(0.45) saturate(1.2);
 }
 .showreel-video {
@@ -29,25 +29,20 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* La presentación completa debe verse en cualquier proporción de pantalla. */
+  object-fit: contain;
   background: transparent;
   cursor: pointer;
-}
-@media (max-aspect-ratio: 4 / 3) {
-  .showreel-video {
-    /* En vertical se ve el video completo, sin recortar los textos. */
-    object-fit: contain;
-  }
 }
 .showreel-shade {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgb(0 0 0 / 0.6) 0%,
-    transparent 20%,
-    transparent 68%,
-    #000 100%
+    rgb(0 0 0 / 0.42) 0%,
+    transparent 16%,
+    transparent 76%,
+    rgb(0 0 0 / 0.58) 100%
   );
   pointer-events: none;
 }
