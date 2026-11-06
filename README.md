@@ -1,6 +1,6 @@
 # Portafolio audiovisual de Julieth / Nicol Moya Quispe
 
-Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de diez videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
+Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de catorce videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
 
 Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 
@@ -32,12 +32,12 @@ PORTAFOLIO-WEB/
 ├── index.html                  # Página: inicio, habilidades, trabajos, contacto y reproductor
 ├── assets/
 │   ├── css/styles.css          # Estilos; colores definidos al comienzo
-│   ├── js/data.js              # Categorías y fichas de los diez videos
+│   ├── js/data.js              # Categorías y fichas de los catorce videos
 │   ├── js/app.js               # Pestañas, abanico, reproductor, habilidades y menú
 │   ├── fonts/                  # Tipografía
 │   ├── images/                 # Retrato, favicon e imagen para redes
 │   ├── posters/                # Portadas de cada video
-│   └── videos/                 # Diez MP4 optimizados
+│   └── videos/                 # Catorce MP4 optimizados
 ├── docs/                       # Análisis audiovisual, inventario y referencias
 ├── media/originales/           # Archivos fuente, ignorados por Git
 ├── scripts/                    # Verificación, servidor, build y preparación de medios
@@ -68,13 +68,13 @@ El repositorio es `https://github.com/Julieth3357t/PORTAFOLIO-WEB.git`, rama `ma
 
 Todas las rutas son relativas (`./assets/...`), así que funcionan dentro de la subcarpeta `/PORTAFOLIO-WEB/`. GitHub Pages distingue mayúsculas y minúsculas en los nombres de archivo, y Windows no. Por eso el verificador compara cada ruta con el nombre exacto en disco.
 
-Los videos pesan unos **101 MiB** en total y el mayor ocupa unos 17 MiB. Están por debajo de los límites de GitHub (100 MiB por archivo) y de GitHub Pages (1 GB por sitio).
+Los catorce videos pesan unos **149,4 MiB** en total y el mayor ocupa unos 17,4 MiB. Están por debajo de los límites de GitHub (100 MiB por archivo) y de GitHub Pages (1 GB por sitio).
 
 ## Editar el contenido
 
 - **Textos de inicio, habilidades y contacto:** `index.html`. Al cambiar un nivel de habilidad, actualizar `data-level`, la cantidad de segmentos `class="on"` y el texto «Nivel N de 5»; el verificador los compara.
 - **Videos y categorías:** `assets/js/data.js`. Cada pieza lleva `category` con `boda` (Videos de Boda), `entrevista` (Videos de Proyectos) o `proyectos` (Proyectos Universitarios); los nombres visibles están en `PORTFOLIO_CATEGORIES`. El orden de la lista define la vista «Todos». Las piezas `horizontal` ocupan dos columnas.
-- **Agregar un video:** copiar el MP4 a `assets/videos/` y la portada JPG a `assets/posters/` con el mismo nombre, en minúsculas y sin espacios. Añadir la ficha en `data.js`, actualizar los contadores de las pestañas en `index.html` y registrar el origen en `scripts/media-manifest.json`. El verificador espera diez videos: ajustar esa cifra en `scripts/check.mjs` si cambia la selección.
+- **Agregar un video:** copiar el MP4 a `assets/videos/` y la portada JPG a `assets/posters/` con el mismo nombre, en minúsculas y sin espacios. Añadir la ficha en `data.js`, actualizar los contadores de las pestañas en `index.html` y registrar el origen en `scripts/media-manifest.json`. El verificador comprueba que el catálogo y el manifiesto coincidan.
 - **Colores:** variables al inicio de `assets/css/styles.css` (`--red`, `--red-deep`, `--black`…).
 - **Forma del abanico:** variables de `.fan` en `assets/css/styles.css`. `--card-w` es el ancho de la tarjeta; `--pivot` la distancia al eje de giro; `--step` los grados entre tarjetas; `--range` cuántas tarjetas se ven a cada lado; `--crop` cuánto se recorta el centro de la rueda. Hay valores para móvil, tableta (761 px) y escritorio (1081 px). El texto curvo del centro está en `index.html`, dentro de `.fan-hub`.
 
@@ -98,4 +98,4 @@ npm.cmd run media
 npm.cmd run build
 ```
 
-La correspondencia entre archivos originales y nombres web está en `scripts/media-manifest.json`.
+La correspondencia entre archivos originales y nombres web está en `scripts/media-manifest.json`. Para regenerar solo algunas piezas, pasar sus identificadores al script, por ejemplo `node scripts/prepare-media.mjs boda-eidy-carlos distrito-10-version-1`.

@@ -55,7 +55,7 @@
     image.decoding = "async";
     image.draggable = false;
     image.width = project.orientation === "vertical" ? 720 : 1280;
-    image.height = project.orientation === "vertical" ? 1280 : 960;
+    image.height = project.posterHeight ?? (project.orientation === "vertical" ? 1280 : 960);
     return image;
   }
 
@@ -168,7 +168,7 @@
       face.tabIndex = -1;
       face.setAttribute("aria-hidden", "true");
       face.setAttribute("aria-label", ariaLabelFor(project));
-      // Las piezas 4:3 se ven completas sobre un fondo desenfocado de la misma portada.
+      // Las piezas horizontales se ven completas sobre un fondo desenfocado de la misma portada.
       if (project.orientation === "horizontal") face.append(posterImage(project, "fan-backdrop"));
       face.append(posterImage(project, "fan-poster"));
       const time = span("chip chip-time fan-time", formatTime(project.seconds));

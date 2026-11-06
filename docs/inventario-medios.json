@@ -1,9 +1,9 @@
 {
   "reviewedOn": "2026-11-06",
-  "originalBytes": 944121347,
-  "webBytes": 105500634,
-  "reductionPercent": 88.83,
-  "validation": "FFprobe: H.264, AAC, yuv420p, dimensiones, duración, faststart y tamaños. FFmpeg: decodificación completa sin errores de los diez archivos web. Reproducción y diseño en navegador pendientes por limitación de acceso a Chrome.",
+  "originalBytes": 1316994009,
+  "webBytes": 156699519,
+  "reductionPercent": 88.1,
+  "validation": "FFprobe: H.264, AAC, yuv420p, dimensiones, duración, faststart y tamaños. FFmpeg: decodificación completa sin errores de las catorce versiones web.",
   "files": [
     {
       "id": "cosmetica",
@@ -263,6 +263,110 @@
       "poster": {
         "file": "assets/posters/sensibilizacion.jpg",
         "extractedAtSeconds": 24.5
+      }
+    },
+    {
+      "id": "distrito-10-version-1",
+      "original": {
+        "file": "media/originales/distrito 10(1).mp4",
+        "bytes": 140654403,
+        "durationSeconds": 58.236,
+        "width": 1440,
+        "height": 2560
+      },
+      "web": {
+        "file": "assets/videos/distrito-10-version-1.mp4",
+        "bytes": 16957017,
+        "durationSeconds": 58.259,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/distrito-10-version-1.jpg",
+        "extractedAtSeconds": 29.1
+      }
+    },
+    {
+      "id": "distrito-10-version-2",
+      "original": {
+        "file": "media/originales/distrito 10(2).mp4",
+        "bytes": 140498465,
+        "durationSeconds": 57.888,
+        "width": 1440,
+        "height": 2560
+      },
+      "web": {
+        "file": "assets/videos/distrito-10-version-2.mp4",
+        "bytes": 16954057,
+        "durationSeconds": 57.911,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/distrito-10-version-2.jpg",
+        "extractedAtSeconds": 19.3
+      }
+    },
+    {
+      "id": "boda-eidy-carlos",
+      "original": {
+        "file": "media/originales/TRAILER EIDY Y CARLOS.mp4",
+        "bytes": 53145683,
+        "durationSeconds": 36.944,
+        "width": 1920,
+        "height": 1080
+      },
+      "web": {
+        "file": "assets/videos/boda-eidy-carlos.mp4",
+        "bytes": 9806340,
+        "durationSeconds": 36.967,
+        "width": 1280,
+        "height": 720,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/boda-eidy-carlos.jpg",
+        "extractedAtSeconds": 6.2
+      }
+    },
+    {
+      "id": "boda-fabiola-rene",
+      "original": {
+        "file": "media/originales/TRAILLER BODA FABIOLA Y RENE_.mp4",
+        "bytes": 38574111,
+        "durationSeconds": 24.683,
+        "width": 1920,
+        "height": 1080
+      },
+      "web": {
+        "file": "assets/videos/boda-fabiola-rene.mp4",
+        "bytes": 7481471,
+        "durationSeconds": 24.707,
+        "width": 1280,
+        "height": 720,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/boda-fabiola-rene.jpg",
+        "extractedAtSeconds": 12.3
       }
     }
   ]

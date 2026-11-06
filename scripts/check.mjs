@@ -112,21 +112,25 @@ const context = { window: {} };
 vm.runInNewContext(data, context);
 const projects = context.window.PORTFOLIO_PROJECTS;
 const categories = context.window.PORTFOLIO_CATEGORIES;
+const manifest = JSON.parse(
+  await readFile(path.join(root, "scripts/media-manifest.json"), "utf8"),
+);
 validate(
   JSON.stringify(categories.map((category) => category.label)) ===
     JSON.stringify(["Videos de Boda", "Videos de Proyectos", "Proyectos Universitarios"]),
   "Las categorías deben ser exactamente: Videos de Boda, Videos de Proyectos y Proyectos Universitarios.",
 );
 validate(
-  Array.isArray(projects) && projects.length === 10,
-  "El catálogo debe incluir los diez videos entregados.",
+  Array.isArray(projects) && projects.length > 0 && projects.length === manifest.length,
+  "El catálogo y el inventario de originales deben tener la misma cantidad de proyectos.",
 );
 validate(
   new Set(projects.map((project) => project.id)).size === projects.length,
   "Hay proyectos repetidos.",
 );
-const manifest = JSON.parse(
-  await readFile(path.join(root, "scripts/media-manifest.json"), "utf8"),
+validate(
+  new Set(manifest.map((entry) => entry.id)).size === manifest.length,
+  "Hay entradas repetidas en el inventario de originales.",
 );
 const totals = { todos: projects.length };
 let mediaSize = 0;

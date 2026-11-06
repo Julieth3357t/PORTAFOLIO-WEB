@@ -17,6 +17,12 @@ const originals = path.join(root, "media/originales");
 const manifest = JSON.parse(
   await readFile(path.join(root, "scripts/media-manifest.json"), "utf8"),
 );
+const requestedIds = process.argv.slice(2);
+for (const id of requestedIds) {
+  if (!manifest.some((entry) => entry.id === id)) {
+    throw new Error(`El proyecto «${id}» no existe en scripts/media-manifest.json.`);
+  }
+}
 await mkdir(path.join(root, "assets/videos"), { recursive: true });
 await mkdir(path.join(root, "assets/posters"), { recursive: true });
 await mkdir(path.join(root, "assets/images"), { recursive: true });
@@ -104,23 +110,27 @@ async function prepare(entry) {
 }
 
 // Dos trabajos simultáneos; los originales nunca se sobrescriben.
-const queue = [...manifest];
+const queue = requestedIds.length
+  ? manifest.filter((entry) => requestedIds.includes(entry.id))
+  : [...manifest];
 await Promise.all(
   Array.from({ length: 2 }, async () => {
     while (queue.length) await prepare(queue.shift());
   }),
 );
-await run([
-  "-i",
-  path.join(originals, "Jhulieth.jpeg"),
-  "-vf",
-  "scale=768:-2",
-  "-c:v",
-  "libwebp",
-  "-quality",
-  "87",
-  path.join(root, "assets/images/julieth.webp"),
-]);
+if (!requestedIds.length) {
+  await run([
+    "-i",
+    path.join(originals, "Jhulieth.jpeg"),
+    "-vf",
+    "scale=768:-2",
+    "-c:v",
+    "libwebp",
+    "-quality",
+    "87",
+    path.join(root, "assets/images/julieth.webp"),
+  ]);
+}
 console.log(
   "Medios web preparados. Originales conservados en media/originales/.",
 );
