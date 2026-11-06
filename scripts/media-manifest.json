@@ -33,5 +33,5 @@
   },
   { "source": "distrito 10(1).mp4", "id": "distrito-10-version-1", "posterAt": 29.1 },
   { "source": "distrito 10(2).mp4", "id": "distrito-10-version-2", "posterAt": 19.3 },
-  { "source": "Portafolio 2026.mp4", "id": "portafolio-personal-2026", "posterAt": 2.8 }
+  { "source": "Portafolio 2026.mp4", "id": "portafolio-personal-2026", "posterAt": 2.8, "use": "presentacion" }
 ]

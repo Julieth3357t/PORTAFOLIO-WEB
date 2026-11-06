@@ -2014,6 +2014,13 @@ html:not(.js) .fan {
 }
 .contact-panel {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-areas:
+    "title contacts"
+    "copy contacts";
+  column-gap: clamp(32px, 5vw, 76px);
+  row-gap: 22px;
   overflow: hidden;
   padding: clamp(28px, 6vw, 76px);
   border-radius: var(--radius-panel);
@@ -2023,24 +2030,26 @@ html:not(.js) .fan {
   box-shadow: var(--glow-strong);
 }
 .contact-panel h2 {
+  grid-area: title;
   max-width: 13ch;
-  font-size: clamp(44px, 7.4vw, 112px);
+  font-size: clamp(44px, 6.5vw, 96px);
   font-weight: 800;
   font-stretch: 75%;
   line-height: 0.92;
   letter-spacing: -0.025em;
 }
 .contact-panel > p {
+  grid-area: copy;
   max-width: 46ch;
-  margin-top: 22px;
   color: var(--text);
   font-size: clamp(17px, 1.4vw, 20px);
 }
 .contact-grid {
+  grid-area: contacts;
+  align-self: center;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
-  margin-top: clamp(32px, 4vw, 52px);
 }
 .contact-card {
   display: grid;
@@ -2271,6 +2280,19 @@ html:not(.js) .fan {
   }
 }
 
+@media (max-width: 900px) {
+  .contact-panel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "copy"
+      "contacts";
+  }
+  .contact-grid {
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 860px) {
   .player-layout {
     grid-template-columns: 1fr;
@@ -2278,9 +2300,6 @@ html:not(.js) .fan {
   .player-info {
     width: min(100%, 560px);
     justify-self: center;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
   }
 }
 

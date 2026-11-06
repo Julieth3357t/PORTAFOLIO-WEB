@@ -47,10 +47,12 @@ El nombre Nabi Films y los contactos vienen del Instagram y los datos facilitado
 **Clasificación actual (especificación de rediseño):** la galería usa tres categorías exactas.
 
 - **Videos de Boda:** Rosa Andrea, Eidy y Carlos, y Fabiola y Rene.
-- **Videos de Proyectos** (antes «Videos de Entrevista»): Portafolio personal 2026, Voces del equipo, Personas en acción, Dentro del equipo (Sofía), La Cabaña en Expocruz, Del proceso al resultado y dos versiones de Distrito 10. Reúnen una presentación personal y formatos de cobertura, corporativos y documentales con presentación o diálogo a cámara.
+- **Videos de Proyectos** (antes «Videos de Entrevista»): Voces del equipo, Personas en acción, Dentro del equipo (Sofía), La Cabaña en Expocruz, Del proceso al resultado y dos versiones de Distrito 10. Reúnen formatos de cobertura, corporativos y documentales con presentación o diálogo a cámara.
 - **Proyectos Universitarios** (antes «Proyectos»): Una esencia, una historia; Cambia el chip; Hacer un video es un arte y Lo que no se ve. Son spots, campañas y montajes híbridos.
 
 Las piezas de Sofía tienen nombres diferenciados para que el visitante entienda su enfoque, aunque sus archivos originales se llamaban `1106`.
+
+«Portafolio personal 2026» se muestra como presentación al inicio y no se repite en la galería de trabajos.
 
 La dirección de arte usa fondos negros y carbón, el rojo como acento y glow, y tarjetas con esquinas muy redondeadas, como en las referencias. El retrato rojo es el elemento principal de identidad. Las portadas proceden de los videos reales. El sitio carga cada video solo al abrir su ficha y lo reproduce dentro de la página con controles propios.
 

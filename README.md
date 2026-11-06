@@ -1,6 +1,6 @@
 # Portafolio audiovisual de Julieth
 
-Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de quince videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
+Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de catorce videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
 
 Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 
@@ -12,7 +12,7 @@ Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 - **Habilidades (`#habilidades`):** el título, el panel y las filas aparecen al llegar. Los niveles cuentan hasta su valor mientras el cabezal recorre la pista, y el panel se inclina con el mouse.
 - **Habilidades técnicas (`#habilidades`):** CapCut Pro (nivel 5), Figma (4), Photoshop (3) e Illustrator (3), en una escala del 1 al 5.
 - **Trabajos (`#trabajos`):** pestañas para **Videos de Boda**, **Videos de Proyectos** y **Proyectos Universitarios**, además de «Todos». Cada categoría se muestra en un **abanico**: una rueda roja que gira con las tarjetas y se maneja deslizando el dedo, con las flechas, con el teclado o con el trackpad. Al tocar una tarjeta lateral, esta pasa al centro; al tocar la central, se reproduce. «Ver todos» despliega la cuadrícula completa. Los videos se reproducen dentro de la página, sin abrir otras pestañas, con controles propios en rojo y negro: reproducir, barra de progreso, tiempo, volumen, pantalla completa y anterior/siguiente.
-- **Final (`#contacto`):** el bloque rojo de contacto aparece al llegar, con una luz que sigue al mouse y botones magnéticos. «Rebobinar al inicio» vuelve arriba con efecto VHS.
+- **Final (`#contacto`):** el bloque rojo de contacto aparece al llegar, con una luz que sigue al mouse y botones magnéticos. En pantallas amplias, los contactos quedan junto al mensaje; en pantallas estrechas, se acomodan debajo. «Rebobinar al inicio» vuelve arriba con efecto VHS.
 - **Fondo (atmósfera):** capa fija de negro a rojo profundo (`assets/css/atmosfera.css` y `assets/js/atmosfera.js`). El rojo sube desde el borde inferior a medida que se lee, sin pasar de la mitad de la pantalla. El horizonte brilla al hacer scroll rápido. Una luz sigue al mouse; en móvil cruza la pantalla con el scroll. El inicio se funde con el fondo. Solo se mueven transform y opacity, y en reposo no consume fotogramas. Con «reducir movimiento» queda fija.
 - **Contacto:** WhatsApp `+591 75541660` (enlace `wa.me` con mensaje inicial), Instagram [@nabi\_\_films](https://www.instagram.com/nabi__films/) y correo `julieth3357t@gmail.com` (`mailto:`).
 
@@ -37,12 +37,12 @@ PORTAFOLIO-WEB/
 ├── index.html                  # Página: inicio, habilidades, trabajos, contacto y reproductor
 ├── assets/
 │   ├── css/styles.css          # Estilos; colores definidos al comienzo
-│   ├── js/data.js              # Categorías y fichas de los quince videos
+│   ├── js/data.js              # Categorías y fichas de los catorce videos de la galería
 │   ├── js/app.js               # Pestañas, abanico, reproductor, habilidades y menú
 │   ├── fonts/                  # Tipografía
 │   ├── images/                 # Retrato, favicon e imagen para redes
 │   ├── posters/                # Portadas de cada video
-│   └── videos/                 # Quince MP4 optimizados y reel de portada
+│   └── videos/                 # MP4 optimizados, presentación y reel de portada
 ├── docs/                       # Análisis audiovisual, inventario y referencias
 ├── media/originales/           # Archivos fuente, ignorados por Git
 ├── scripts/                    # Verificación, servidor, build y preparación de medios
@@ -77,13 +77,13 @@ El repositorio es `https://github.com/Julieth3357t/PORTAFOLIO-WEB.git`, rama `ma
 
 Todas las rutas son relativas (`./assets/...`), así que funcionan dentro de la subcarpeta `/PORTAFOLIO-WEB/`. GitHub Pages distingue mayúsculas y minúsculas en los nombres de archivo, y Windows no. Por eso el verificador compara cada ruta con el nombre exacto en disco.
 
-Los quince videos pesan unos **158 MiB** en total y el mayor ocupa unos 17,4 MiB. Con el reel, las portadas y el resto del sitio, la publicación sigue por debajo del límite de GitHub Pages de 1 GB; todos los videos individuales están por debajo de los 100 MiB admitidos por GitHub.
+Los catorce videos de la galería y sus portadas pesan unos **151 MiB** en total. La presentación, el reel y los archivos multimedia conservados también caben dentro del límite de GitHub Pages de 1 GB; todos los videos individuales están por debajo de los 100 MiB admitidos por GitHub.
 
 ## Editar el contenido
 
 - **Textos de inicio, habilidades y contacto:** `index.html`. Al cambiar un nivel de habilidad, actualizar `data-level`, la cantidad de segmentos `class="on"` y el texto «Nivel N de 5»; el verificador los compara.
 - **Videos y categorías:** `assets/js/data.js`. Cada pieza lleva `category` con `boda` (Videos de Boda), `entrevista` (Videos de Proyectos) o `proyectos` (Proyectos Universitarios); los nombres visibles están en `PORTFOLIO_CATEGORIES`. El orden de la lista define la vista «Todos». Las piezas `horizontal` ocupan dos columnas.
-- **Agregar un video:** copiar el MP4 a `assets/videos/` y la portada JPG a `assets/posters/` con el mismo nombre, en minúsculas y sin espacios. Añadir la ficha en `data.js`, actualizar los contadores de las pestañas y los enlaces alternativos de `index.html`, y registrar el origen en `scripts/media-manifest.json`. El verificador comprueba que el catálogo y el manifiesto coincidan.
+- **Agregar un video:** copiar el MP4 a `assets/videos/` y la portada JPG a `assets/posters/` con el mismo nombre, en minúsculas y sin espacios. Añadir la ficha en `data.js`, actualizar los contadores de las pestañas y los enlaces alternativos de `index.html`, y registrar el origen en `scripts/media-manifest.json`. El verificador comprueba que el catálogo coincida con las entradas de la galería en el manifiesto.
 - **Colores:** variables al inicio de `assets/css/styles.css` (`--red`, `--red-deep`, `--black`…).
 - **Forma del abanico:** variables de `.fan` en `assets/css/styles.css`. `--card-w` es el ancho de la tarjeta; `--pivot` la distancia al eje de giro; `--step` los grados entre tarjetas; `--range` cuántas tarjetas se ven a cada lado; `--crop` cuánto se recorta el centro de la rueda. Hay valores para móvil, tableta (761 px) y escritorio (1081 px). El texto curvo del centro está en `index.html`, dentro de `.fan-hub`.
 
@@ -111,6 +111,6 @@ La correspondencia entre archivos originales y nombres web está en `scripts/med
 
 Para regenerar solo algunas piezas, pasar sus identificadores al script, por ejemplo `node scripts/prepare-media.mjs boda-eidy-carlos distrito-10-version-1`. Las demás versiones web se mantienen sin cambios.
 
-La copia de mayor calidad usada al inicio se genera desde `media/originales/Portafolio 2026.mp4` con `node scripts/prepare-presentation-hd.mjs`. Conserva la resolución original y pesa menos de 24 MiB. La versión de la galería se mantiene separada.
+La copia de mayor calidad usada al inicio se genera desde `media/originales/Portafolio 2026.mp4` con `node scripts/prepare-presentation-hd.mjs`. Conserva la resolución original y pesa menos de 24 MiB. La presentación no se repite en la galería; la copia anterior se conserva entre los archivos multimedia.
 
 El reel del inicio (`assets/videos/reel.mp4`, unos 0,9 MiB, y su portada `assets/images/reel-poster.jpg`) se regenera con `node scripts/make-reel.mjs`. Ahí se eligen los fragmentos; no incluye la pieza sensible ni el montaje con escenas de terceros.

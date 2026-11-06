@@ -117,14 +117,16 @@ const categories = context.window.PORTFOLIO_CATEGORIES;
 const manifest = JSON.parse(
   await readFile(path.join(root, "scripts/media-manifest.json"), "utf8"),
 );
+// El manifiesto conserva también originales usados fuera de la galería.
+const galleryManifest = manifest.filter((entry) => entry.use !== "presentacion");
 validate(
   JSON.stringify(categories.map((category) => category.label)) ===
     JSON.stringify(["Videos de Boda", "Videos de Proyectos", "Proyectos Universitarios"]),
   "Las categorías deben ser exactamente: Videos de Boda, Videos de Proyectos y Proyectos Universitarios.",
 );
 validate(
-  Array.isArray(projects) && projects.length > 0 && projects.length === manifest.length,
-  "El catálogo y el inventario de originales deben tener la misma cantidad de proyectos.",
+  Array.isArray(projects) && projects.length > 0 && projects.length === galleryManifest.length,
+  "El catálogo y los originales de la galería deben tener la misma cantidad de proyectos.",
 );
 validate(
   new Set(projects.map((project) => project.id)).size === projects.length,
@@ -150,7 +152,7 @@ for (const project of projects) {
     `Orientación no válida en ${project.id}`,
   );
   validate(
-    manifest.some((entry) => entry.id === project.id),
+    galleryManifest.some((entry) => entry.id === project.id),
     `Falta el origen de ${project.id}`,
   );
   validate(
