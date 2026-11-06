@@ -396,8 +396,8 @@
           <div class="section-head section-head-wide">
             <h2 id="work-title">Trabajos</h2>
             <p>
-              Bodas, entrevistas y proyectos de diseño y video. Elige una
-              categoría y reproduce cada pieza aquí mismo.
+              Bodas, entrevistas y proyectos de diseño y video. Gira el abanico
+              y toca la pieza del centro para verla aquí mismo.
             </p>
           </div>
           <div class="tabs" role="tablist" aria-label="Categorías de trabajos">
@@ -449,16 +449,101 @@
               Proyectos <span class="tab-count">4</span>
             </button>
           </div>
-          <p class="category-note" id="category-note" aria-live="polite">
+          <p class="category-note" id="category-note">
             Las 10 piezas del portafolio.
           </p>
-          <div class="work-frame">
+          <div
+            class="work-panel"
+            id="work-panel"
+            role="tabpanel"
+            aria-labelledby="tab-todos"
+          >
             <div
-              class="work-grid"
-              id="work-panel"
-              role="tabpanel"
-              aria-labelledby="tab-todos"
-            ></div>
+              class="fan"
+              id="fan"
+              role="region"
+              aria-roledescription="carrusel"
+              aria-label="Trabajos"
+            >
+              <div class="fan-stage" id="fan-stage">
+                <div class="fan-disc" aria-hidden="true">
+                  <div class="fan-disc-spin" id="fan-disc"></div>
+                </div>
+                <div class="fan-hub" aria-hidden="true">
+                  <svg class="fan-hub-text" viewBox="0 0 200 100">
+                    <path
+                      id="fan-arc"
+                      d="M 20 100 A 80 80 0 0 1 180 100"
+                      fill="none"
+                    />
+                    <text>
+                      <textPath
+                        href="#fan-arc"
+                        startOffset="50%"
+                        text-anchor="middle"
+                      >
+                        JULIETH / NICOL ✳ NABI FILMS
+                      </textPath>
+                    </text>
+                  </svg>
+                  <span class="fan-needle"></span>
+                </div>
+                <div class="fan-cards" id="fan-cards"></div>
+                <button
+                  class="fan-arrow fan-arrow-prev"
+                  id="fan-prev"
+                  type="button"
+                  aria-label="Trabajo anterior"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-prev"></use>
+                  </svg>
+                </button>
+                <button
+                  class="fan-arrow fan-arrow-next"
+                  id="fan-next"
+                  type="button"
+                  aria-label="Trabajo siguiente"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-next"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="fan-caption" id="fan-caption">
+                <p class="fan-counter" id="fan-counter">1 / 10</p>
+                <h3 class="fan-title" id="fan-title">Trabajos</h3>
+                <p class="fan-meta">
+                  <span class="chip chip-outline" id="fan-category"></span>
+                  <span class="chip" id="fan-duration"></span>
+                  <span class="chip chip-warning" id="fan-warning" hidden
+                    >Contenido sensible</span
+                  >
+                </p>
+                <p class="fan-subtitle" id="fan-subtitle"></p>
+                <div class="fan-actions">
+                  <button class="button" id="fan-play" type="button">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-play"></use>
+                    </svg>
+                    Reproducir
+                  </button>
+                  <button
+                    class="button button-ghost"
+                    id="grid-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="work-grid-wrap"
+                  >
+                    Ver todos
+                  </button>
+                </div>
+              </div>
+              <p class="visually-hidden" id="fan-status" aria-live="polite"></p>
+            </div>
+            <div class="work-frame" id="work-grid-wrap" hidden>
+              <div class="work-grid" id="work-grid"></div>
+            </div>
           </div>
           <noscript>
             <p class="noscript-message">

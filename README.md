@@ -8,7 +8,7 @@ Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 
 - **Inicio (`#inicio`):** «Portafolio» y el nombre «Julieth / Nicol Moya Quispe», la biografía y accesos rápidos a WhatsApp, Instagram y correo.
 - **Habilidades técnicas (`#habilidades`):** CapCut Pro (nivel 5), Figma (4), Photoshop (3) e Illustrator (3), en una escala del 1 al 5.
-- **Trabajos (`#trabajos`):** pestañas para **Videos de Boda**, **Videos de Entrevista** y **Proyectos**, además de «Todos». Los videos se reproducen dentro de la página, sin abrir otras pestañas. Los controles son propios, en rojo y negro: reproducir, barra de progreso, tiempo, volumen, pantalla completa y anterior/siguiente.
+- **Trabajos (`#trabajos`):** pestañas para **Videos de Boda**, **Videos de Entrevista** y **Proyectos**, además de «Todos». Cada categoría se muestra en un **abanico**: una rueda roja que gira con las tarjetas y se maneja deslizando el dedo, con las flechas, con el teclado o con el trackpad. Al tocar una tarjeta lateral, esta pasa al centro; al tocar la central, se reproduce. «Ver todos» despliega la cuadrícula completa. Los videos se reproducen dentro de la página, sin abrir otras pestañas, con controles propios en rojo y negro: reproducir, barra de progreso, tiempo, volumen, pantalla completa y anterior/siguiente.
 - **Contacto (`#contacto`):** WhatsApp `+591 75541660` (enlace `wa.me` con mensaje inicial), Instagram [@nabi\_\_films](https://www.instagram.com/nabi__films/) y correo `julieth3357t@gmail.com` (`mailto:`).
 
 > **Instagram:** el usuario correcto lleva **dos** guiones bajos: `@nabi__films`. La cuenta `@nabi_films`, con uno solo, pertenece a otra persona. El verificador impide publicar ese enlace por error.
@@ -33,7 +33,7 @@ PORTAFOLIO-WEB/
 ├── assets/
 │   ├── css/styles.css          # Estilos; colores definidos al comienzo
 │   ├── js/data.js              # Categorías y fichas de los diez videos
-│   ├── js/app.js               # Pestañas, reproductor, animación de habilidades y menú
+│   ├── js/app.js               # Pestañas, abanico, reproductor, habilidades y menú
 │   ├── fonts/                  # Tipografía
 │   ├── images/                 # Retrato, favicon e imagen para redes
 │   ├── posters/                # Portadas de cada video
@@ -76,6 +76,7 @@ Los videos pesan unos **101 MiB** en total y el mayor ocupa unos 17 MiB. Están 
 - **Videos y categorías:** `assets/js/data.js`. Cada pieza lleva `category` con `boda`, `entrevista` o `proyectos`. El orden de la lista define la vista «Todos». Las piezas `horizontal` ocupan dos columnas.
 - **Agregar un video:** copiar el MP4 a `assets/videos/` y la portada JPG a `assets/posters/` con el mismo nombre, en minúsculas y sin espacios. Añadir la ficha en `data.js`, actualizar los contadores de las pestañas en `index.html` y registrar el origen en `scripts/media-manifest.json`. El verificador espera diez videos: ajustar esa cifra en `scripts/check.mjs` si cambia la selección.
 - **Colores:** variables al inicio de `assets/css/styles.css` (`--red`, `--red-deep`, `--black`…).
+- **Forma del abanico:** variables de `.fan` en `assets/css/styles.css`. `--card-w` es el ancho de la tarjeta; `--pivot` la distancia al eje de giro; `--step` los grados entre tarjetas; `--range` cuántas tarjetas se ven a cada lado; `--crop` cuánto se recorta el centro de la rueda. Hay valores para móvil, tableta (761 px) y escritorio (1081 px). El texto curvo del centro está en `index.html`, dentro de `.fan-hub`.
 
 ## Verificar
 

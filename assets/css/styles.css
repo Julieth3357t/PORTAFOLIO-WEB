@@ -37,7 +37,7 @@
   --radius-panel: 40px;
   --radius-card: 30px;
   --radius-inner: 22px;
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* ---------- Base ---------- */
@@ -48,6 +48,7 @@
   box-sizing: border-box;
 }
 html {
+  -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
   -webkit-text-size-adjust: 100%;
@@ -80,9 +81,11 @@ button {
   cursor: pointer;
   touch-action: manipulation;
 }
-a,
-button {
-  -webkit-tap-highlight-color: transparent;
+button,
+.chip,
+.tab {
+  -webkit-user-select: none;
+  user-select: none;
 }
 :focus-visible {
   outline: 2px solid #fff;
@@ -182,7 +185,7 @@ ul {
   color: var(--text);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.22);
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .button:hover {
     background: var(--red-hover);
     box-shadow: var(--glow-strong);
@@ -201,7 +204,7 @@ ul {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgb(0 0 0 / 0.78);
+  background: rgb(0 0 0 / 0.9);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
@@ -253,7 +256,7 @@ ul {
   color: var(--text);
   box-shadow: inset 0 0 0 1px var(--red-line);
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .main-nav .nav-contact:hover {
     background: var(--red-deep);
     box-shadow: var(--glow-strong);
@@ -396,7 +399,7 @@ ul {
   opacity: 1;
   transform: translate(-50%, 0);
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .quick-link:hover {
     background: var(--red-hover);
     box-shadow: var(--glow-strong);
@@ -660,7 +663,7 @@ ul {
   font-size: 14px;
   font-variant-numeric: tabular-nums;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .tab:hover {
     color: #fff;
     box-shadow: inset 0 0 0 1px var(--red-line);
@@ -812,7 +815,7 @@ html:not(.js) .category-note {
   font-size: 12px;
   font-weight: 600;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .work-open:hover {
     box-shadow: var(--glow-strong);
     transform: translateY(-4px);
@@ -848,6 +851,344 @@ html:not(.js) .category-note {
   text-decoration: underline;
   text-decoration-color: var(--red);
   text-underline-offset: 4px;
+}
+
+/* ---------- Abanico de trabajos ---------- */
+
+.fan {
+  /* Geometría compartida con app.js (--step, --pivot y --range se leen desde JS). */
+  --card-w: 184px;
+  --card-h: calc(var(--card-w) * 16 / 9);
+  --pivot: 300px;
+  --step: 31;
+  --range: 1.35;
+  --top: 28px;
+  --crop: 30px;
+  --hub: calc(var(--pivot) - var(--card-h) / 2 - 16px);
+  --disc: calc(var(--pivot) + var(--card-h) * 0.1);
+}
+html:not(.js) .fan {
+  display: none;
+}
+.fan-stage {
+  position: relative;
+  height: calc(var(--top) + var(--card-h) / 2 + var(--pivot) - var(--crop));
+  margin-inline: calc(50% - 50vw);
+  overflow: hidden;
+  /* El navegador conserva el desplazamiento vertical; el horizontal gira la rueda. */
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  /* La rueda se funde con el fondo en el borde inferior. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 56px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 56px), transparent);
+}
+.fan-stage.is-dragging,
+.fan-stage.is-dragging .fan-face {
+  cursor: grabbing;
+}
+.fan-disc {
+  position: absolute;
+  left: calc(50% - var(--disc));
+  bottom: calc(-1 * var(--disc) - var(--crop));
+  width: calc(var(--disc) * 2);
+  height: calc(var(--disc) * 2);
+  border-radius: 50%;
+  overflow: hidden;
+  /* Borde de la rueda y dos anillos concéntricos, como en la referencia. */
+  box-shadow:
+    0 0 0 1px rgb(255 43 58 / 0.6),
+    0 0 0 28px rgb(255 43 58 / 0.035),
+    0 0 0 29px rgb(255 43 58 / 0.28),
+    0 0 0 66px rgb(255 43 58 / 0.02),
+    0 0 0 67px rgb(255 43 58 / 0.14),
+    0 -30px 110px -30px rgb(255 43 58 / 0.5);
+}
+.fan-disc-spin {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  /* Un gajo por tarjeta, centrado en ella: la rueda gira con el abanico. */
+  background: repeating-conic-gradient(
+    from calc(var(--step) * -0.5deg),
+    #7d0914 0deg calc(var(--step) * 1deg - 0.8deg),
+    #000 calc(var(--step) * 1deg - 0.8deg) calc(var(--step) * 1deg),
+    #b00e1e calc(var(--step) * 1deg) calc(var(--step) * 2deg - 0.8deg),
+    #000 calc(var(--step) * 2deg - 0.8deg) calc(var(--step) * 2deg)
+  );
+  will-change: transform;
+}
+.fan-disc::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(0 0 0 / 0.75) 0%,
+    rgb(0 0 0 / 0.45) 55%,
+    rgb(0 0 0 / 0.08) 92%,
+    rgb(0 0 0 / 0.35) 100%
+  );
+}
+.fan-hub {
+  position: absolute;
+  z-index: 1;
+  left: calc(50% - var(--hub));
+  bottom: calc(-1 * var(--hub) - var(--crop));
+  width: calc(var(--hub) * 2);
+  height: calc(var(--hub) * 2);
+  border-radius: 50%;
+  background: radial-gradient(circle, #141414 0%, #050505 70%);
+  box-shadow:
+    0 0 0 1px rgb(255 43 58 / 0.55),
+    0 0 0 9px #000,
+    0 0 0 10px rgb(255 43 58 / 0.3),
+    0 -12px 40px rgb(0 0 0 / 0.85);
+}
+.fan-hub-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: visible;
+}
+.fan-hub-text text {
+  fill: rgb(255 255 255 / 0.85);
+  font-family: var(--font);
+  font-size: 9px;
+  font-weight: 700;
+  font-stretch: 90%;
+  letter-spacing: 1.6px;
+}
+.fan-needle {
+  /* La aguja señala la pieza seleccionada. */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 14px solid var(--red);
+  transform: translate(-50%, -13px);
+  filter: drop-shadow(0 0 6px rgb(255 43 58 / 0.85));
+}
+.fan-cards {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+}
+.fan-card {
+  position: absolute;
+  top: var(--top);
+  left: calc(50% - var(--card-w) / 2);
+  width: var(--card-w);
+  height: var(--card-h);
+  transform-origin: 50% calc(var(--card-h) / 2 + var(--pivot));
+  will-change: transform, opacity;
+}
+.fan-face {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--carbon);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.1),
+    0 18px 40px rgb(0 0 0 / 0.6);
+  transform-origin: 50% 100%;
+  transition: box-shadow 0.25s var(--ease-out);
+  -webkit-touch-callout: none;
+}
+.fan-card.is-active .fan-face {
+  box-shadow:
+    var(--glow-strong),
+    0 18px 40px rgb(0 0 0 / 0.6);
+}
+.fan-poster,
+.fan-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+.fan-card[data-orientation="horizontal"] .fan-poster {
+  object-fit: contain;
+}
+.fan-backdrop {
+  filter: blur(16px) brightness(0.55) saturate(1.2);
+  transform: scale(1.25);
+}
+.fan-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgb(0 0 0 / 0.5), transparent 32%),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.45), transparent 24%);
+}
+.fan-time {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  background: rgb(0 0 0 / 0.7);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.fan-play {
+  z-index: 2;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition:
+    opacity 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out),
+    background-color 0.2s,
+    color 0.2s;
+}
+.fan-card.is-active .fan-play {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.fan-shade {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+}
+.fan-arrow {
+  position: absolute;
+  z-index: 200;
+  top: calc(var(--top) + var(--card-h) * 0.62);
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.72);
+  color: #fff;
+  box-shadow:
+    inset 0 0 0 1px var(--red-line),
+    0 8px 24px rgb(0 0 0 / 0.5);
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.16s var(--ease-out);
+}
+.fan-arrow-prev {
+  left: calc(50% - var(--card-w) / 2 - 86px);
+}
+.fan-arrow-next {
+  right: calc(50% - var(--card-w) / 2 - 86px);
+}
+.fan-arrow:active {
+  transform: scale(0.94);
+}
+.fan-caption {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  text-align: center;
+}
+.fan-counter {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.fan-title {
+  font-size: clamp(32px, 4.6vw, 54px);
+  font-weight: 800;
+  font-stretch: 78%;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+.fan-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.chip-outline,
+.chip-warning {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: inset 0 0 0 1px var(--red-line);
+}
+.chip-outline {
+  color: var(--red);
+}
+.chip-warning {
+  color: #ff8a93;
+}
+.fan-subtitle {
+  max-width: 42ch;
+  color: var(--muted);
+}
+.fan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.fan-actions .button .icon {
+  width: 20px;
+  height: 20px;
+}
+.work-frame {
+  margin-top: clamp(32px, 4vw, 48px);
+}
+@media (hover: hover) and (pointer: fine) {
+  .fan-face {
+    cursor: pointer;
+  }
+  .fan-card.is-active .fan-face:hover .fan-play {
+    background: var(--red-deep);
+    color: #fff;
+  }
+  .fan-arrow:hover {
+    background: var(--red-deep);
+    box-shadow: var(--glow-strong);
+  }
+}
+@media (min-width: 761px) {
+  .fan {
+    --card-w: 200px;
+    --pivot: 370px;
+    --step: 28;
+    --range: 1.6;
+    --crop: 50px;
+  }
+  .fan-hub-text text {
+    font-size: 7.5px;
+    letter-spacing: 1.5px;
+  }
+}
+@media (min-width: 1081px) {
+  .fan {
+    --card-w: 220px;
+    --pivot: 400px;
+    --step: 27;
+    --range: 2.2;
+    --crop: 66px;
+  }
 }
 
 /* ---------- Reproductor ---------- */
@@ -910,7 +1251,7 @@ html:not(.js) .category-note {
     background-color 0.2s,
     box-shadow 0.2s;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .round-button:hover {
     background: var(--red-deep);
     box-shadow: var(--glow-strong);
@@ -991,7 +1332,7 @@ html:not(.js) .category-note {
 .player:not([data-state="paused"]):not([data-state="ended"]) .player-big-play {
   display: none;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .player-big-play:hover {
     background: var(--red-deep);
     color: #fff;
@@ -1091,7 +1432,7 @@ html:not(.js) .category-note {
   width: 22px;
   height: 22px;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .control-button:hover {
     background: rgb(255 43 58 / 0.25);
   }
@@ -1265,7 +1606,7 @@ html:not(.js) .category-note {
   width: 20px;
   height: 20px;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .nav-button:hover {
     background: var(--red-deep);
     box-shadow: var(--glow-strong);
@@ -1357,7 +1698,7 @@ html:not(.js) .category-note {
 .contact-card-primary .contact-label {
   color: #fff;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .contact-card:hover {
     box-shadow: var(--glow-strong);
     transform: translateY(-3px);
