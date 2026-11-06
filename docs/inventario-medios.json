@@ -1,0 +1,269 @@
+{
+  "reviewedOn": "2026-11-06",
+  "originalBytes": 944121347,
+  "webBytes": 105500634,
+  "reductionPercent": 88.83,
+  "validation": "FFprobe: H.264, AAC, yuv420p, dimensiones, duración, faststart y tamaños. FFmpeg: decodificación completa sin errores de los diez archivos web. Reproducción y diseño en navegador pendientes por limitación de acceso a Chrome.",
+  "files": [
+    {
+      "id": "cosmetica",
+      "original": {
+        "file": "media/originales/spot cosmet.mp4",
+        "bytes": 88113359,
+        "durationSeconds": 34.73712,
+        "width": 1440,
+        "height": 2560
+      },
+      "web": {
+        "file": "assets/videos/cosmetica.mp4",
+        "bytes": 9840429,
+        "durationSeconds": 34.761,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/cosmetica.jpg",
+        "extractedAtSeconds": 26.1
+      }
+    },
+    {
+      "id": "rosa-andrea",
+      "original": {
+        "file": "media/originales/WEDDING PLANNER ROSA ANDREA.mp4",
+        "bytes": 150375383,
+        "durationSeconds": 59.513,
+        "width": 1440,
+        "height": 2560
+      },
+      "web": {
+        "file": "assets/videos/rosa-andrea.mp4",
+        "bytes": 18283655,
+        "durationSeconds": 59.537,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/rosa-andrea.jpg",
+        "extractedAtSeconds": 10.8
+      }
+    },
+    {
+      "id": "cambia",
+      "original": {
+        "file": "media/originales/campaña cambia_.mp4",
+        "bytes": 54982978,
+        "durationSeconds": 37.106,
+        "width": 1080,
+        "height": 1920
+      },
+      "web": {
+        "file": "assets/videos/cambia.mp4",
+        "bytes": 9626714,
+        "durationSeconds": 37.129,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/cambia.jpg",
+        "extractedAtSeconds": 12.4
+      }
+    },
+    {
+      "id": "expocruz",
+      "original": {
+        "file": "media/originales/EXPOCRUZ LA CABAÑA(1).mp4",
+        "bytes": 38953604,
+        "durationSeconds": 23.383,
+        "width": 1080,
+        "height": 1920
+      },
+      "web": {
+        "file": "assets/videos/expocruz.mp4",
+        "bytes": 7301505,
+        "durationSeconds": 23.406,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/expocruz.jpg",
+        "extractedAtSeconds": 17.7
+      }
+    },
+    {
+      "id": "cabana-mucarzel",
+      "original": {
+        "file": "media/originales/final de la cabaña mucarzel_.mp4",
+        "bytes": 41018969,
+        "durationSeconds": 26.471,
+        "width": 1080,
+        "height": 1920
+      },
+      "web": {
+        "file": "assets/videos/cabana-mucarzel.mp4",
+        "bytes": 8239915,
+        "durationSeconds": 26.495,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/cabana-mucarzel.jpg",
+        "extractedAtSeconds": 2.5
+      }
+    },
+    {
+      "id": "sofia-equipo",
+      "original": {
+        "file": "media/originales/1106.mp4",
+        "bytes": 117704809,
+        "durationSeconds": 45.349,
+        "width": 1440,
+        "height": 2560
+      },
+      "web": {
+        "file": "assets/videos/sofia-equipo.mp4",
+        "bytes": 8056366,
+        "durationSeconds": 45.372,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/sofia-equipo.jpg",
+        "extractedAtSeconds": 33.5
+      }
+    },
+    {
+      "id": "sofia-logistica",
+      "original": {
+        "file": "media/originales/1106(1).mp4",
+        "bytes": 150314049,
+        "durationSeconds": 60.256,
+        "width": 1440,
+        "height": 2560
+      },
+      "web": {
+        "file": "assets/videos/sofia-logistica.mp4",
+        "bytes": 9732009,
+        "durationSeconds": 60.28,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/sofia-logistica.jpg",
+        "extractedAtSeconds": 43.4
+      }
+    },
+    {
+      "id": "sofia-voces",
+      "original": {
+        "file": "media/originales/1106(2).mp4",
+        "bytes": 181742656,
+        "durationSeconds": 70.984,
+        "width": 1440,
+        "height": 2560
+      },
+      "web": {
+        "file": "assets/videos/sofia-voces.mp4",
+        "bytes": 13014843,
+        "durationSeconds": 71.007,
+        "width": 720,
+        "height": 1280,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/sofia-voces.jpg",
+        "extractedAtSeconds": 42.9
+      }
+    },
+    {
+      "id": "video-es-arte",
+      "original": {
+        "file": "media/originales/HACER UN VIDEO ES UN ARTE(1).mp4",
+        "bytes": 70172515,
+        "durationSeconds": 59.722,
+        "width": 1440,
+        "height": 1080
+      },
+      "web": {
+        "file": "assets/videos/video-es-arte.mp4",
+        "bytes": 12713925,
+        "durationSeconds": 59.746,
+        "width": 1280,
+        "height": 960,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/video-es-arte.jpg",
+        "extractedAtSeconds": 3.9
+      }
+    },
+    {
+      "id": "sensibilizacion",
+      "original": {
+        "file": "media/originales/suicidio(4).mp4",
+        "bytes": 50743025,
+        "durationSeconds": 41.936,
+        "width": 1440,
+        "height": 1080
+      },
+      "web": {
+        "file": "assets/videos/sensibilizacion.mp4",
+        "bytes": 8691273,
+        "durationSeconds": 41.959,
+        "width": 1280,
+        "height": 960,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/sensibilizacion.jpg",
+        "extractedAtSeconds": 24.5
+      }
+    }
+  ]
+}

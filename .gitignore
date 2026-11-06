@@ -1,0 +1,14 @@
+# Originales de alta calidad: conservar localmente, publicar las copias web.
+/media/originales/
+
+# Herramientas, análisis temporal y salida de publicación.
+/.tools/
+/dist/
+/node_modules/
+
+# Archivos del sistema y editores.
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+.vscode/
