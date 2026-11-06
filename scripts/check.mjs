@@ -51,8 +51,10 @@ async function checkLocalUrl(url, from) {
 
 for (const match of html.matchAll(/\b(?:src|href)="([^"]+)"/g))
   await checkLocalUrl(match[1], ".");
-for (const match of css.matchAll(/url\(["']?([^"')]+)["']?\)/g))
-  await checkLocalUrl(match[1], "assets/css");
+// Las imágenes incrustadas (data:) pueden contener url(#id) internos: se omiten.
+const cssWithoutData = css.replace(/"data:[^"]*"|'data:[^']*'/g, '""');
+for (const match of cssWithoutData.matchAll(/url\(["']?([^"')]+)["']?\)/g))
+  if (match[1]) await checkLocalUrl(match[1], "assets/css");
 
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 validate(

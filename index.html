@@ -47,10 +47,25 @@
     <link rel="preload" as="image" href="./assets/images/julieth.webp" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <script>
-      document.documentElement.classList.add("js");
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        root.classList.add("anim");
+        try {
+          if (!sessionStorage.getItem("intro-visto")) root.classList.add("intro-on");
+        } catch (error) {}
+        // Si los efectos no cargan, el contenido aparece igual a los 4 segundos.
+        window.__animFallback = setTimeout(function () {
+          root.classList.remove("anim", "intro-on");
+        }, 4000);
+      })();
     </script>
     <script src="./assets/js/data.js" defer></script>
     <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/vendor/gsap/gsap.min.js" defer></script>
+    <script src="./assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="./assets/js/motion.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -161,6 +176,9 @@
           stroke-linejoin="round"
         />
       </symbol>
+      <symbol id="i-rewind" viewBox="0 0 24 24">
+        <path d="M11.5 6v12L3 12zM21 6v12l-8.5-6z" fill="currentColor" />
+      </symbol>
       <symbol id="i-close" viewBox="0 0 24 24">
         <path
           d="M6.5 6.5l11 11m0-11l-11 11"
@@ -191,6 +209,24 @@
         />
       </symbol>
     </svg>
+
+    <div class="intro" id="intro">
+      <div class="intro-film" aria-hidden="true">
+        <div class="intro-leader">
+          <span class="intro-sweep" id="intro-sweep"></span>
+          <svg class="intro-rings" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="97" />
+            <circle cx="100" cy="100" r="80" />
+            <line x1="100" y1="0" x2="100" y2="200" />
+            <line x1="0" y1="100" x2="200" y2="100" />
+          </svg>
+          <span class="intro-count" id="intro-count">3</span>
+        </div>
+      </div>
+      <button class="intro-skip" id="intro-skip" type="button">
+        Saltar intro
+      </button>
+    </div>
 
     <a class="skip-link" href="#trabajos">Ir a los trabajos</a>
 
@@ -231,122 +267,106 @@
 
     <main>
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="container">
-          <div class="slate">
-            <div class="slate-clapper" aria-hidden="true">
-              <span class="clapper-arm"></span>
-              <span class="clapper-base"></span>
-              <span class="clapper-hinge"></span>
-            </div>
-            <div class="slate-board">
-              <div class="slate-fields">
-                <h1 class="slate-title" id="hero-title">
-                  <span class="slate-cell slate-production" data-label="Producción"
-                    >Portafolio</span
-                  >
-                  <span class="slate-cell slate-direction" data-label="Dirección">
-                    <span class="hero-name-line"
-                      >Julieth <span class="hero-slash">/</span> Nicol</span
-                    >
-                    <span class="hero-name-line">Moya Quispe</span>
-                  </span>
-                </h1>
-                <ul class="slate-contact" aria-label="Contacto rápido">
-                  <li>
-                    <a
-                      class="slate-link slate-link-primary"
-                      href="https://wa.me/59175541660?text=Hola%20Julieth%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      ><svg class="icon" aria-hidden="true">
-                        <use href="#i-whatsapp"></use></svg
-                      ><span class="slate-link-text"
-                        ><span class="slate-link-name">WhatsApp</span
-                        ><span class="slate-link-value">+591 75541660</span></span
-                      ></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="slate-link"
-                      href="https://www.instagram.com/nabi__films/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      ><svg class="icon" aria-hidden="true">
-                        <use href="#i-instagram"></use></svg
-                      ><span class="slate-link-text"
-                        ><span class="slate-link-name">Instagram</span
-                        ><span class="slate-link-value">@nabi__films</span></span
-                      ></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="slate-link"
-                      href="mailto:julieth3357t@gmail.com?subject=Proyecto%20desde%20tu%20portafolio"
-                      ><svg class="icon" aria-hidden="true">
-                        <use href="#i-mail"></use></svg
-                      ><span class="slate-link-text"
-                        ><span class="slate-link-name">Correo</span
-                        ><span class="slate-link-value"
-                          >julieth3357t@gmail.com</span
-                        ></span
-                      ></a
-                    >
-                  </li>
-                </ul>
-                <div class="slate-cell slate-synopsis">
-                  <p class="slate-label">Sinopsis</p>
-                  <p class="hero-lead">
-                    Soy estudiante de diseño gráfico con habilidades en producción
-                    audiovisual.
-                  </p>
-                  <p class="hero-bio">
-                    Me caracterizo por ser proactiva, creativa y con iniciativa para
-                    liderar proyectos. No importa si estoy en clase o trabajando en
-                    mi espacio personal, siempre estoy creando algo. Me apasiona
-                    diseñar, explorar ideas, contar historias, escribirlas y
-                    transformarlas en videos capaces de transmitir emociones,
-                    conectar con las personas y generar empatía.
-                  </p>
-                </div>
-              </div>
-              <div class="slate-side">
-                <figure class="slate-photo">
-                  <img
-                    src="./assets/images/julieth.webp"
-                    width="768"
-                    height="1344"
-                    alt="Julieth con lentes, camisa blanca y traje negro sobre un fondo rojo"
-                    fetchpriority="high"
-                  />
-                  <figcaption>
-                    <span class="slate-label">Nota</span>
-                    Grabar feo y editar bonito.
-                  </figcaption>
-                </figure>
-                <dl class="slate-meta">
-                  <div>
-                    <dt>Escena</dt>
-                    <dd>Inicio</dd>
-                  </div>
-                  <div>
-                    <dt>Toma</dt>
-                    <dd>01</dd>
-                  </div>
-                  <div>
-                    <dt>Estudio</dt>
-                    <dd>Nabi Films</dd>
-                  </div>
-                  <div>
-                    <dt>Lugar</dt>
-                    <dd>Santa Cruz, Bolivia</dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
+        <div class="hero-screen" aria-hidden="true">
+          <video
+            class="hero-reel"
+            id="hero-reel"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="./assets/images/reel-poster.jpg"
+          >
+            <source src="./assets/videos/reel.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-shade"></div>
+          <div class="hero-grain"></div>
+        </div>
+        <figure class="hero-portrait">
+          <img
+            src="./assets/images/julieth.webp"
+            width="768"
+            height="1344"
+            alt="Julieth con lentes, camisa blanca y traje negro sobre un fondo rojo"
+            fetchpriority="high"
+          />
+        </figure>
+        <div class="viewfinder" aria-hidden="true">
+          <span class="vf-corner vf-tl"></span>
+          <span class="vf-corner vf-tr"></span>
+          <span class="vf-corner vf-bl"></span>
+          <span class="vf-corner vf-br"></span>
+          <span class="vf-rec"
+            ><span class="vf-dot"></span>REC
+            <span class="vf-timecode" id="vf-timecode">00:00:00:00</span></span
+          >
+          <span class="vf-place">Santa Cruz, Bolivia</span>
+        </div>
+        <span class="letterbox letterbox-top" aria-hidden="true"></span>
+        <span class="letterbox letterbox-bottom" aria-hidden="true"></span>
+        <div class="container hero-content">
+          <h1 class="hero-title" id="hero-title" tabindex="-1">
+            <span class="hero-kicker reveal-line"><span>Portafolio</span></span>
+            <span class="hero-name">
+              <span class="reveal-line"
+                ><span>Julieth <span class="hero-slash">/</span> Nicol</span></span
+              >
+              <span class="reveal-line"><span>Moya Quispe</span></span>
+            </span>
+          </h1>
+          <ul class="hero-contact" aria-label="Contacto rápido">
+            <li>
+              <a
+                class="hero-cta hero-cta-primary"
+                href="https://wa.me/59175541660?text=Hola%20Julieth%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
+                target="_blank"
+                rel="noopener noreferrer"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-whatsapp"></use></svg
+                ><span>WhatsApp</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="hero-cta"
+                href="https://www.instagram.com/nabi__films/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @nabi__films"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-instagram"></use></svg
+                ><span>Instagram</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="hero-cta"
+                href="mailto:julieth3357t@gmail.com?subject=Proyecto%20desde%20tu%20portafolio"
+                aria-label="Correo julieth3357t@gmail.com"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-mail"></use></svg
+                ><span>Correo</span></a
+              >
+            </li>
+          </ul>
+          <div class="hero-synopsis">
+            <p class="hero-lead">
+              Soy estudiante de diseño gráfico con habilidades en producción
+              audiovisual.
+            </p>
+            <p class="hero-bio">
+              Me caracterizo por ser proactiva, creativa y con iniciativa para
+              liderar proyectos. No importa si estoy en clase o trabajando en mi
+              espacio personal, siempre estoy creando algo. Me apasiona diseñar,
+              explorar ideas, contar historias, escribirlas y transformarlas en
+              videos capaces de transmitir emociones, conectar con las personas y
+              generar empatía.
+            </p>
           </div>
         </div>
+        <a class="hero-scroll" href="#habilidades"
+          ><span>Sigue la historia</span><i aria-hidden="true"></i
+        ></a>
       </section>
 
       <section
@@ -613,8 +633,12 @@
                   >Del proceso al resultado</a
                 >,
                 <a href="./assets/videos/sofia-equipo.mp4">Dentro del equipo</a>,
-                <a href="./assets/videos/distrito-10-version-1.mp4">Distrito 10 · versión 1</a>,
-                <a href="./assets/videos/distrito-10-version-2.mp4">Distrito 10 · versión 2</a>
+                <a href="./assets/videos/distrito-10-version-1.mp4"
+                  >Distrito 10 · versión 1</a
+                >,
+                <a href="./assets/videos/distrito-10-version-2.mp4"
+                  >Distrito 10 · versión 2</a
+                >
               </li>
               <li>
                 Proyectos Universitarios:
@@ -636,9 +660,27 @@
     </main>
 
     <footer class="site-footer" id="contacto" aria-labelledby="contact-title">
+      <div class="credits-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span class="marquee-group"
+            ><span>Bodas</span><i>✳</i><span>Testimoniales</span><i>✳</i
+            ><span>Proyectos de diseño</span><i>✳</i><span>Videos</span
+            ><i>✳</i></span
+          ><span class="marquee-group"
+            ><span>Bodas</span><i>✳</i><span>Testimoniales</span><i>✳</i
+            ><span>Proyectos de diseño</span><i>✳</i><span>Videos</span
+            ><i>✳</i></span
+          >
+        </div>
+      </div>
       <div class="container">
-        <div class="contact-panel">
-          <h2 id="contact-title">¿Tienes una historia para contar?</h2>
+        <div class="contact-panel" id="contact-panel">
+          <span class="contact-spotlight" aria-hidden="true"></span>
+          <h2 id="contact-title">
+            <span class="reveal-line"><span>¿Tienes una</span></span>
+            <span class="reveal-line"><span>historia para</span></span>
+            <span class="reveal-line"><span>contar?</span></span>
+          </h2>
           <p>
             Escríbeme para cubrir tu boda, grabar una entrevista o crear un
             proyecto de diseño y video.
@@ -683,13 +725,42 @@
             </li>
           </ul>
         </div>
+        <div class="credits" id="credits">
+          <dl class="credits-list">
+            <div>
+              <dt>Dirección y edición</dt>
+              <dd>Julieth / Nicol Moya Quispe</dd>
+            </div>
+            <div>
+              <dt>Producción</dt>
+              <dd>Nabi Films</dd>
+            </div>
+            <div>
+              <dt>Herramientas</dt>
+              <dd>CapCut Pro, Figma, Photoshop e Illustrator</dd>
+            </div>
+            <div>
+              <dt>Locación</dt>
+              <dd>Santa Cruz, Bolivia</dd>
+            </div>
+          </dl>
+          <p class="credits-fin">Fin</p>
+        </div>
         <div class="footer-bottom">
           <p>
             © <span id="year">2026</span> Julieth / Nicol Moya Quispe, Nabi
             Films.
           </p>
-          <a href="#inicio">Volver al inicio</a>
+          <a class="rewind" id="rewind" href="#inicio"
+            ><svg class="icon" aria-hidden="true"><use href="#i-rewind"></use></svg
+            >Rebobinar al inicio</a
+          >
         </div>
+      </div>
+      <div class="rewind-overlay" id="rewind-overlay" aria-hidden="true">
+        <span
+          ><svg class="icon"><use href="#i-rewind"></use></svg>Rebobinando</span
+        >
       </div>
     </footer>
 
