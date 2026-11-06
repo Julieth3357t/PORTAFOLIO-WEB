@@ -1,0 +1,110 @@
+/**
+ * Kinetic UI Motion Components & Keyframes
+ * Production-ready tokens and animations designed for high craft, performance, and accessibility.
+ */
+
+:root {
+  --motion-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-duration-fast: 150ms;
+  --motion-duration-medium: 300ms;
+  --motion-duration-slow: 600ms;
+}
+
+/* 1. Orchestrated Hero Fade & Slide */
+@keyframes hero-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.motion-hero-enter {
+  animation: hero-reveal var(--motion-duration-slow) var(--motion-ease-out-expo) forwards;
+}
+
+/* 2. Tactile Button & Link Interactions */
+.motion-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform var(--motion-duration-fast) var(--motion-ease-out-expo),
+              box-shadow var(--motion-duration-fast) ease,
+              background-color var(--motion-duration-fast) ease;
+  will-change: transform;
+}
+
+.motion-btn:hover {
+  transform: translateY(-2px);
+}
+
+.motion-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* 3. Orbit & Ambient Motion Graphic Loop */
+@keyframes ambient-orbit {
+  0% {
+    transform: rotate(0deg) translate3d(8px, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate3d(8px, 0, 0) rotate(-360deg);
+  }
+}
+
+.motion-orbit {
+  animation: ambient-orbit 12s linear infinite;
+  will-change: transform;
+}
+
+/* 4. Pulse & Signal Indicator */
+@keyframes signal-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(113, 230, 164, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(113, 230, 164, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(113, 230, 164, 0);
+  }
+}
+
+.motion-signal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #71E6A4;
+  animation: signal-pulse 2.2s infinite var(--motion-ease-in-out);
+}
+
+/* 5. Accessible Degradation */
+@media (prefers-reduced-motion: reduce) {
+  .motion-hero-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .motion-btn {
+    transition: none;
+    transform: none !important;
+  }
+
+  .motion-orbit {
+    animation: none;
+    transform: none;
+  }
+
+  .motion-signal-dot {
+    animation: none;
+  }
+}
+

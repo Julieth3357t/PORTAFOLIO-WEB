@@ -37,14 +37,20 @@ Los títulos descriptivos asignados a archivos genéricos sirven para navegar la
 
 ## Decisiones para el portafolio
 
-El nombre Nabi Films y los contactos vienen del Instagram y los datos facilitados por la usuaria. El nombre «Jhulieth» se tomó del archivo del retrato y queda sujeto a confirmar su ortografía.
+El nombre Nabi Films y los contactos vienen del Instagram y los datos facilitados por la usuaria. La especificación posterior fija el nombre como «Julieth / Nicol Moya Quispe» y el Instagram correcto es `@nabi__films`, con dos guiones bajos. `@nabi_films`, con uno solo, es otra cuenta.
 
-Se abrió la selección con cosmética y boda para mostrar dos registros distintos. Luego se agruparon publicidad, marca y narrativas conceptuales mediante filtros. Las piezas de Sofía tienen nombres diferenciados para que el visitante entienda su enfoque, aunque sus archivos originales se llamaban `1106`.
+**Clasificación actual (especificación de rediseño):** la galería usa tres categorías exactas.
 
-La dirección de arte usa el fondo oscuro, el acento rojo y la composición editorial de las referencias. El retrato rojo se convirtió en el elemento principal de identidad. Las portadas proceden de los videos reales; el sitio carga los videos solo al abrir una ficha, con reproducción a decisión del visitante.
+- **Videos de Boda:** Rosa Andrea.
+- **Videos de Entrevista:** Voces del equipo, Personas en acción, Dentro del equipo (Sofía), La Cabaña en Expocruz y Del proceso al resultado. Son formatos corporativos y documentales con presentación o diálogo a cámara.
+- **Proyectos:** Una esencia, una historia; Cambia el chip; Hacer un video es un arte y Lo que no se ve. Son spots, campañas y montajes híbridos.
+
+Las piezas de Sofía tienen nombres diferenciados para que el visitante entienda su enfoque, aunque sus archivos originales se llamaban `1106`.
+
+La dirección de arte usa fondos negros y carbón, el rojo como acento y glow, y tarjetas con esquinas muy redondeadas, como en las referencias. El retrato rojo es el elemento principal de identidad. Las portadas proceden de los videos reales. El sitio carga cada video solo al abrir su ficha y lo reproduce dentro de la página con controles propios.
 
 ## Información que enriquecería una próxima edición
 
-Para convertir cada ficha en un caso de estudio completo, añadir el objetivo del encargo, el rol exacto de Jhulieth, el contexto académico o profesional, los créditos del equipo y una explicación de las decisiones de edición. En los montajes con escenas cinematográficas conviene identificar también las fuentes de los fragmentos. La versión actual describe lo observable y presenta esas piezas como montajes.
+Para convertir cada ficha en un caso de estudio completo, añadir el objetivo del encargo, el rol exacto de Julieth, el contexto académico o profesional, los créditos del equipo y una explicación de las decisiones de edición. En los montajes con escenas cinematográficas conviene identificar también las fuentes de los fragmentos. La versión actual describe lo observable y presenta esas piezas como montajes.
 
 También sería útil disponer de subtítulos revisados para las piezas habladas y de un reel de presentación que sintetice la selección. Son ampliaciones editoriales posibles; los diez videos entregados se conservan completos en la web preparada.

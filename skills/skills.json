@@ -1,0 +1,70 @@
+{
+  "$schema": "https://skills.sh/schema.json",
+  "version": "1.0.0",
+  "categories": {
+    "1. DISEÑO WEB PROFESIONAL Y UI/UX": [
+      { "name": "frontend-design", "source": "anthropics/skills", "path": "skills/frontend-design/SKILL.md" },
+      { "name": "design-taste-frontend", "source": "leonxlnx/taste-skill", "path": "skills/design-taste-frontend/SKILL.md" },
+      { "name": "high-end-visual-design", "source": "leonxlnx/taste-skill", "path": "skills/high-end-visual-design/SKILL.md" },
+      { "name": "redesign-existing-projects", "source": "leonxlnx/taste-skill", "path": "skills/redesign-existing-projects/SKILL.md" },
+      { "name": "minimalist-ui", "source": "leonxlnx/taste-skill", "path": "skills/minimalist-ui/SKILL.md" },
+      { "name": "industrial-brutalist-ui", "source": "leonxlnx/taste-skill", "path": "skills/industrial-brutalist-ui/SKILL.md" },
+      { "name": "ui-ux-pro-max", "source": "nextlevelbuilder/ui-ux-pro-max-skill", "path": "skills/ui-ux-pro-max/SKILL.md" },
+      { "name": "design-system", "source": "nextlevelbuilder/ui-ux-pro-max-skill", "path": "skills/design-system/SKILL.md" }
+    ],
+    "2. DISEÑO PREMIUM Y MICROANIMACIONES": [
+      { "name": "impeccable", "source": "pbakaus/impeccable", "path": "skills/impeccable/SKILL.md" },
+      { "name": "animate", "source": "pbakaus/impeccable", "path": "skills/animate/SKILL.md" },
+      { "name": "polish", "source": "pbakaus/impeccable", "path": "skills/polish/SKILL.md" },
+      { "name": "delight", "source": "pbakaus/impeccable", "path": "skills/delight/SKILL.md" },
+      { "name": "overdrive", "source": "pbakaus/impeccable", "path": "skills/overdrive/SKILL.md" },
+      { "name": "optimize", "source": "pbakaus/impeccable", "path": "skills/optimize/SKILL.md" },
+      { "name": "colorize", "source": "pbakaus/impeccable", "path": "skills/colorize/SKILL.md" },
+      { "name": "bolder", "source": "pbakaus/impeccable", "path": "skills/bolder/SKILL.md" },
+      { "name": "emil-design-eng", "source": "emilkowalski/skills", "path": "skills/emil-design-eng/SKILL.md" }
+    ],
+    "3. THREE.JS - TODAS LAS SKILLS 3D": [
+      { "name": "threejs-scenes", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-scenes/SKILL.md" },
+      { "name": "threejs-shaders", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-shaders/SKILL.md" },
+      { "name": "threejs-lights", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-lights/SKILL.md" },
+      { "name": "threejs-particles", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-particles/SKILL.md" },
+      { "name": "threejs-animation", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-animation/SKILL.md" },
+      { "name": "threejs-effects", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-effects/SKILL.md" },
+      { "name": "threejs-cameras", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-cameras/SKILL.md" },
+      { "name": "threejs-webgpu", "source": "cesartevisual/threejs-skills", "path": "skills/threejs-webgpu/SKILL.md" }
+    ],
+    "4. GSAP, MOTION Y SPLINE INTERACTIVO": [
+      { "name": "gsap-scrolltrigger", "source": "freshtechbro/claudedesignskills", "path": "skills/gsap-scrolltrigger/SKILL.md" },
+      { "name": "motion-framer", "source": "freshtechbro/claudedesignskills", "path": "skills/motion-framer/SKILL.md" },
+      { "name": "spline-interactive", "source": "freshtechbro/claudedesignskills", "path": "skills/spline-interactive/SKILL.md" }
+    ],
+    "5. MOTION GRAPHICS Y ANIMACION DE VIDEO": [
+      { "name": "hyperframes", "source": "heygen-com/hyperframes", "path": "skills/hyperframes/SKILL.md" },
+      { "name": "hyperframes-cli", "source": "heygen-com/hyperframes", "path": "skills/hyperframes-cli/SKILL.md" },
+      { "name": "hyperframes-animation", "source": "heygen-com/hyperframes", "path": "skills/hyperframes-animation/SKILL.md" },
+      { "name": "hyperframes-creative", "source": "heygen-com/hyperframes", "path": "skills/hyperframes-creative/SKILL.md" },
+      { "name": "hyperframes-keyframes", "source": "heygen-com/hyperframes", "path": "skills/hyperframes-keyframes/SKILL.md" },
+      { "name": "hyperframes-registry", "source": "heygen-com/hyperframes", "path": "skills/hyperframes-registry/SKILL.md" },
+      { "name": "hyperframes-studio", "source": "heygen-com/hyperframes", "path": "skills/hyperframes-studio/SKILL.md" },
+      { "name": "motion-graphics", "source": "heygen-com/hyperframes", "path": "skills/motion-graphics/SKILL.md" },
+      { "name": "gsap", "source": "heygen-com/hyperframes", "path": "skills/gsap/SKILL.md" },
+      { "name": "css-animations", "source": "heygen-com/hyperframes", "path": "skills/css-animations/SKILL.md" },
+      { "name": "lottie", "source": "heygen-com/hyperframes", "path": "skills/lottie/SKILL.md" },
+      { "name": "three", "source": "heygen-com/hyperframes", "path": "skills/three/SKILL.md" }
+    ],
+    "6. REMOTION - VIDEOS ANIMADOS CON REACT": [
+      { "name": "remotion-best-practices", "source": "remotion-dev/skills", "path": "skills/remotion-best-practices/SKILL.md" },
+      { "name": "remotion-create", "source": "remotion-dev/skills", "path": "skills/remotion-create/SKILL.md" },
+      { "name": "remotion-render", "source": "remotion-dev/skills", "path": "skills/remotion-render/SKILL.md" },
+      { "name": "remotion-interactivity", "source": "remotion-dev/skills", "path": "skills/remotion-interactivity/SKILL.md" },
+      { "name": "remotion-multimedia", "source": "remotion-dev/skills", "path": "skills/remotion-multimedia/SKILL.md" },
+      { "name": "remotion-studio", "source": "remotion-dev/skills", "path": "skills/remotion-studio/SKILL.md" }
+    ],
+    "7. OPTIMIZACION Y CALIDAD DE INTERFACES": [
+      { "name": "web-design-guidelines", "source": "vercel-labs/agent-skills", "path": "skills/web-design-guidelines/SKILL.md" },
+      { "name": "vercel-react-best-practices", "source": "vercel-labs/agent-skills", "path": "skills/vercel-react-best-practices/SKILL.md" },
+      { "name": "vercel-react-view-transitions", "source": "vercel-labs/agent-skills", "path": "skills/vercel-react-view-transitions/SKILL.md" }
+    ]
+  }
+}
+

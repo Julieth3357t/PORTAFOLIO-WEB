@@ -3,18 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#141110" />
-    <title>Nabi Films — Diseño y edición audiovisual</title>
+    <meta name="theme-color" content="#000000" />
+    <title>Portafolio | Julieth / Nicol Moya Quispe</title>
     <meta
       name="description"
-      content="El portafolio audiovisual de Jhulieth, la mirada detrás de Nabi Films. Publicidad, contenido de marca, eventos y narrativas visuales."
+      content="Portafolio audiovisual de Julieth / Nicol Moya Quispe: videos de boda, videos de entrevista y proyectos de diseño. Contacto por WhatsApp, Instagram y correo."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_BO" />
-    <meta property="og:title" content="Nabi Films — Historias que se sienten" />
+    <meta
+      property="og:title"
+      content="Portafolio | Julieth / Nicol Moya Quispe"
+    />
     <meta
       property="og:description"
-      content="Marcas, personas y momentos. Una selección de diseño y edición audiovisual por Jhulieth."
+      content="Videos de boda, entrevistas y proyectos de diseño y producción audiovisual."
     />
     <meta
       property="og:url"
@@ -26,7 +29,7 @@
     />
     <meta
       property="og:image:alt"
-      content="Retrato de Jhulieth, de Nabi Films, sobre un fondo rojo"
+      content="Retrato de Julieth con traje negro sobre un fondo rojo"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <link
@@ -34,32 +37,171 @@
       href="https://julieth3357t.github.io/PORTAFOLIO-WEB/"
     />
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg" />
-    <link rel="preload" as="image" href="./assets/images/jhulieth.webp" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="./assets/fonts/bricolage-grotesque-latin.woff2"
+      crossorigin
+    />
+    <link rel="preload" as="image" href="./assets/images/julieth.webp" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <script src="./assets/js/data.js" defer></script>
     <script src="./assets/js/app.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Nabi Films",
+        "@type": "Person",
+        "name": "Julieth Nicol Moya Quispe",
+        "description": "Estudiante de diseño gráfico con habilidades en producción audiovisual.",
         "url": "https://julieth3357t.github.io/PORTAFOLIO-WEB/",
         "email": "julieth3357t@gmail.com",
         "telephone": "+59175541660",
-        "sameAs": ["https://www.instagram.com/nabi__films/"]
+        "sameAs": ["https://www.instagram.com/nabi__films/"],
+        "brand": { "@type": "Brand", "name": "Nabi Films" }
       }
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#proyectos">Ir a los proyectos</a>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-whatsapp" viewBox="0 0 24 24">
+        <path
+          d="M3.6 20.4l1.1-4.1A8.4 8.4 0 1 1 7.9 19.4z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M9.3 7.9c.3-.3.8-.3 1 .1l.8 1.7c.1.3.1.6-.2.9l-.5.5c.6 1.1 1.4 1.9 2.5 2.5l.5-.5c.3-.3.6-.3.9-.2l1.7.8c.4.2.4.7.1 1-.6.7-1.5 1-2.4.8-2.4-.6-4.4-2.6-5-5-.2-.9.1-1.8.6-2.6z"
+          fill="currentColor"
+        />
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.7">
+          <rect x="3.6" y="3.6" width="16.8" height="16.8" rx="5" />
+          <circle cx="12" cy="12" r="3.9" />
+        </g>
+        <circle cx="17.1" cy="6.9" r="1.1" fill="currentColor" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="5.5" width="18" height="13" rx="3" />
+          <path d="M4.2 7.4l7.8 5.6 7.8-5.6" stroke-linecap="round" />
+        </g>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="M8.2 5.3v13.4L18.8 12z" fill="currentColor" />
+      </symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24">
+        <g fill="currentColor">
+          <rect x="6.5" y="5" width="3.6" height="14" rx="1" />
+          <rect x="13.9" y="5" width="3.6" height="14" rx="1" />
+        </g>
+      </symbol>
+      <symbol id="i-replay" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3" />
+          <path d="M4.5 4.5v4h4" />
+        </g>
+      </symbol>
+      <symbol id="i-volume" viewBox="0 0 24 24">
+        <path d="M3.5 9.3h3.6L12 5.5v13l-4.9-3.8H3.5z" fill="currentColor" />
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        >
+          <path d="M15.4 9a4.2 4.2 0 0 1 0 6" />
+          <path d="M17.9 6.4a7.8 7.8 0 0 1 0 11.2" />
+        </g>
+      </symbol>
+      <symbol id="i-muted" viewBox="0 0 24 24">
+        <path d="M3.5 9.3h3.6L12 5.5v13l-4.9-3.8H3.5z" fill="currentColor" />
+        <path
+          d="M15.5 9.5l5 5m0-5l-5 5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24">
+        <path
+          d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.9"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-collapse" viewBox="0 0 24 24">
+        <path
+          d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.9"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path
+          d="M6.5 6.5l11 11m0-11l-11 11"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-prev" viewBox="0 0 24 24">
+        <path
+          d="M14.5 5.5L8 12l6.5 6.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-next" viewBox="0 0 24 24">
+        <path
+          d="M9.5 5.5L16 12l-6.5 6.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#trabajos">Ir a los trabajos</a>
+
     <header class="site-header">
       <div class="container header-inner">
-        <a class="wordmark" href="#inicio" aria-label="Nabi Films, inicio"
-          >nabi<span class="brand-dot">.</span
-          ><span class="wordmark-sub">FILMS</span></a
+        <a class="brand" href="#inicio" aria-label="Nabi Films, ir al inicio"
+          ><span class="brand-dot" aria-hidden="true"></span>nabi films</a
         >
         <button
           class="menu-toggle"
+          type="button"
           aria-controls="main-nav"
           aria-expanded="false"
           aria-label="Abrir menú"
@@ -67,412 +209,516 @@
           <span></span><span></span>
         </button>
         <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-          <a href="#proyectos">Proyectos <span>01</span></a>
-          <a href="#sobre-mi">Sobre mí <span>02</span></a>
-          <a class="nav-contact" href="#contacto"
-            >Hablemos <span aria-hidden="true">↗</span></a
-          >
+          <a href="#habilidades">Habilidades</a>
+          <a href="#trabajos">Trabajos</a>
+          <a class="nav-contact" href="#contacto">Contacto</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero container" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="status-dot" aria-hidden="true"></span> DISEÑO & EDICIÓN
-            AUDIOVISUAL
-          </p>
-          <h1 id="hero-title">Historias que<br /><em>se sienten.</em></h1>
-          <p class="hero-description">
-            Marcas, personas y momentos.<br />Mi forma de convertirlos en
-            historias.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-red" href="#proyectos"
-              >Explorar proyectos <span aria-hidden="true">↗</span></a
-            >
-            <a class="text-link" href="#contacto"
-              >¿Creamos algo? <span aria-hidden="true">↗</span></a
-            >
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 class="hero-title" id="hero-title">
+              <span class="hero-kicker">Portafolio</span>
+              <span class="hero-name">
+                <span class="hero-name-line"
+                  >Julieth <span class="hero-slash">/</span> Nicol</span
+                >
+                <span class="hero-name-line">Moya Quispe</span>
+              </span>
+            </h1>
+            <p class="hero-lead">
+              Soy estudiante de diseño gráfico con habilidades en producción
+              audiovisual.
+            </p>
+            <p class="hero-bio">
+              Me caracterizo por ser proactiva, creativa y con iniciativa para
+              liderar proyectos. No importa si estoy en clase o trabajando en mi
+              espacio personal, siempre estoy creando algo. Me apasiona diseñar,
+              explorar ideas, contar historias, escribirlas y transformarlas en
+              videos capaces de transmitir emociones, conectar con las personas
+              y generar empatía.
+            </p>
+            <div class="hero-actions">
+              <ul class="quick-contact" aria-label="Contacto rápido">
+                <li>
+                  <a
+                    class="quick-link quick-link-primary"
+                    href="https://wa.me/59175541660?text=Hola%20Julieth%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-label="WhatsApp"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#i-whatsapp"></use></svg
+                    ><span class="visually-hidden"
+                      >Escribir por WhatsApp</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="quick-link"
+                    href="https://www.instagram.com/nabi__films/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-label="Instagram"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#i-instagram"></use></svg
+                    ><span class="visually-hidden"
+                      >Ver Instagram @nabi__films</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="quick-link"
+                    href="mailto:julieth3357t@gmail.com?subject=Proyecto%20desde%20tu%20portafolio"
+                    data-label="Correo"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#i-mail"></use></svg
+                    ><span class="visually-hidden"
+                      >Enviar un correo a julieth3357t@gmail.com</span
+                    ></a
+                  >
+                </li>
+              </ul>
+              <a class="button button-ghost" href="#trabajos">Ver trabajos</a>
+            </div>
           </div>
-          <div class="hero-footnote">
-            <span class="tiny-cross" aria-hidden="true">✳</span
-            ><span>Una mirada propia.<br />Muchas formas de contar.</span>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <figure class="portrait-frame">
+          <figure class="hero-portrait">
             <img
-              src="./assets/images/jhulieth.webp"
+              src="./assets/images/julieth.webp"
               width="768"
               height="1344"
-              alt="Jhulieth, de Nabi Films, con lentes y traje negro sobre un fondo rojo"
+              alt="Julieth con lentes, camisa blanca y traje negro sobre un fondo rojo"
               fetchpriority="high"
             />
-            <div class="viewfinder" aria-hidden="true">
-              <span>REC <i></i></span><span>NABI FILMS</span>
-            </div>
-            <figcaption>
-              <span>JHULIETH</span><span>La mirada detrás de Nabi Films.</span>
+            <figcaption class="portrait-overlay">
+              <span class="rec-chip"
+                ><span class="rec-dot" aria-hidden="true"></span>REC</span
+              >
+              <span class="place-chip">Santa Cruz, Bolivia</span>
             </figcaption>
           </figure>
-          <button
-            class="hero-preview"
-            type="button"
-            data-project="cosmetica"
-            aria-label="Ver Una esencia, una historia, spot de cosmética"
-          >
-            <img
-              src="./assets/posters/cosmetica.jpg"
-              width="720"
-              height="1280"
-              alt=""
-              loading="lazy"
-            />
-            <span class="hero-preview-copy"
-              ><span class="eyebrow">DALE PLAY A UNA IDEA</span
-              ><strong>Una esencia,<br />una historia.</strong
-              ><span class="preview-time"
-                >00:35 <span aria-hidden="true">↗</span></span
-              ></span
-            >
-            <span class="play-icon" aria-hidden="true">▶</span>
-          </button>
-          <span class="vertical-note" aria-hidden="true"
-            >PORTAFOLIO / NABI FILMS</span
-          >
         </div>
       </section>
 
-      <div class="discipline-strip" aria-label="Áreas del portafolio">
-        <div class="container">
-          <span>PUBLICIDAD</span><i aria-hidden="true">✳</i
-          ><span>CONTENIDO DE MARCA</span><i aria-hidden="true">✳</i
-          ><span>EVENTOS</span><i aria-hidden="true">✳</i
-          ><span>NARRATIVA VISUAL</span>
-        </div>
-      </div>
-
       <section
-        class="work-section container section-space"
-        id="proyectos"
-        aria-labelledby="work-title"
+        class="skills-section section-space"
+        id="habilidades"
+        aria-labelledby="skills-title"
       >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow section-index">01 / EL TRABAJO</p>
-            <h2 id="work-title">Cada pieza,<br /><em>una intención.</em></h2>
-          </div>
-          <p class="section-intro">
-            Del detalle de un producto a la emoción de un momento. Diez piezas
-            para explorar distintas formas de contar.
-          </p>
-        </div>
-        <div class="filter-row">
-          <div
-            class="filters"
-            role="group"
-            aria-label="Filtrar proyectos por categoría"
-          >
-            <button
-              class="filter-button is-active"
-              type="button"
-              data-filter="todos"
-              aria-pressed="true"
-            >
-              Todos <span>10</span>
-            </button>
-            <button
-              class="filter-button"
-              type="button"
-              data-filter="publicidad"
-              aria-pressed="false"
-            >
-              Publicidad <span>02</span>
-            </button>
-            <button
-              class="filter-button"
-              type="button"
-              data-filter="marca"
-              aria-pressed="false"
-            >
-              Marca <span>05</span>
-            </button>
-            <button
-              class="filter-button"
-              type="button"
-              data-filter="eventos"
-              aria-pressed="false"
-            >
-              Eventos <span>01</span>
-            </button>
-            <button
-              class="filter-button"
-              type="button"
-              data-filter="narrativa"
-              aria-pressed="false"
-            >
-              Narrativa <span>02</span>
-            </button>
-          </div>
-          <span
-            class="project-count"
-            id="project-count"
-            role="status"
-            aria-live="polite"
-            >10 proyectos</span
-          >
-        </div>
-        <div class="project-grid" id="project-grid"></div>
-        <noscript
-          ><p class="noscript-message">
-            Activa JavaScript para usar los filtros y ver las fichas de los
-            proyectos. También puedes ver los videos directamente:
-          </p>
-          <ul class="noscript-videos">
-            <li>
-              <a href="./assets/videos/cosmetica.mp4"
-                >Una esencia, una historia</a
-              >
-            </li>
-            <li><a href="./assets/videos/rosa-andrea.mp4">Rosa Andrea</a></li>
-            <li><a href="./assets/videos/cambia.mp4">Cambia el chip</a></li>
-            <li>
-              <a href="./assets/videos/expocruz.mp4">La Cabaña en Expocruz</a>
-            </li>
-            <li>
-              <a href="./assets/videos/cabana-mucarzel.mp4"
-                >La Cabaña Mucarzel</a
-              >
-            </li>
-            <li>
-              <a href="./assets/videos/sofia-equipo.mp4"
-                >Sofía: dentro del equipo</a
-              >
-            </li>
-            <li>
-              <a href="./assets/videos/sofia-logistica.mp4"
-                >Sofía: personas en acción</a
-              >
-            </li>
-            <li>
-              <a href="./assets/videos/sofia-voces.mp4"
-                >Sofía: voces del equipo</a
-              >
-            </li>
-            <li>
-              <a href="./assets/videos/video-es-arte.mp4"
-                >Hacer un video es un arte</a
-              >
-            </li>
-            <li>
-              <a href="./assets/videos/sensibilizacion.mp4"
-                >Montaje de sensibilización (contenido sensible sobre salud
-                mental y suicidio)</a
-              >
-            </li>
-          </ul></noscript
-        >
-      </section>
-
-      <section
-        class="about-section"
-        id="sobre-mi"
-        aria-labelledby="about-title"
-      >
-        <div class="container about-layout section-space">
-          <div class="about-image">
-            <img
-              src="./assets/images/jhulieth.webp"
-              width="768"
-              height="1344"
-              alt="Retrato de Jhulieth"
-              loading="lazy"
-            /><span class="photo-label">DETRÁS DE NABI FILMS / JHULIETH</span
-            ><span class="about-asterisk" aria-hidden="true">✳</span>
-          </div>
-          <div class="about-copy">
-            <p class="eyebrow section-index">02 / SOBRE MÍ</p>
-            <h2 id="about-title">
-              Una mirada.<br /><em>Distintas historias.</em>
-            </h2>
-            <p class="about-lead">
-              Soy Jhulieth, la mirada creativa detrás de Nabi Films.
-            </p>
+        <div class="container skills-layout">
+          <div class="section-head">
+            <h2 id="skills-title">Habilidades técnicas</h2>
             <p>
-              Mi portafolio reúne piezas publicitarias, contenido de marca,
-              eventos y exploraciones narrativas. El hilo que las une: conectar
-              imágenes, tipografía y personas para construir una historia.
+              Los programas con los que edito y diseño, y mi nivel de dominio en
+              cada uno, en una escala del&nbsp;1 al&nbsp;5.
             </p>
-            <p>
-              Entre la energía de un reel, los detalles de una marca y la
-              emoción de una boda, cada pieza encuentra su propio ritmo.
-            </p>
-            <ul
-              class="practice-list"
-              aria-label="Lenguajes presentes en el trabajo"
-            >
-              <li>
-                <span>01</span> Edición & montaje audiovisual
-                <span aria-hidden="true">↗</span>
+          </div>
+          <div class="skills-panel" id="skills-panel">
+            <div class="skills-ruler" aria-hidden="true">
+              <span></span>
+              <span class="skills-ruler-scale"
+                ><span>1</span><span>2</span><span>3</span><span>4</span
+                ><span>5</span></span
+              >
+              <span></span>
+            </div>
+            <ul class="skills-list">
+              <li class="skill" data-skill="CapCut Pro" data-level="5">
+                <span class="skill-name"
+                  ><strong>CapCut Pro</strong
+                  ><span>Edición y montaje de video</span></span
+                >
+                <span class="skill-track" aria-hidden="true"
+                  ><i class="on" style="--i: 0"></i
+                  ><i class="on" style="--i: 1"></i
+                  ><i class="on" style="--i: 2"></i
+                  ><i class="on" style="--i: 3"></i
+                  ><i class="on" style="--i: 4"></i
+                ></span>
+                <span class="skill-level"><strong>Nivel 5</strong> de 5</span>
               </li>
-              <li>
-                <span>02</span> Contenido para marcas & redes
-                <span aria-hidden="true">↗</span>
+              <li class="skill" data-skill="Figma" data-level="4">
+                <span class="skill-name"
+                  ><strong>Figma</strong
+                  ><span>Diseño de interfaces y piezas gráficas</span></span
+                >
+                <span class="skill-track" aria-hidden="true"
+                  ><i class="on" style="--i: 0"></i
+                  ><i class="on" style="--i: 1"></i
+                  ><i class="on" style="--i: 2"></i
+                  ><i class="on" style="--i: 3"></i><i style="--i: 4"></i
+                ></span>
+                <span class="skill-level"><strong>Nivel 4</strong> de 5</span>
               </li>
-              <li>
-                <span>03</span> Tipografía & narrativa visual
-                <span aria-hidden="true">↗</span>
+              <li class="skill" data-skill="Photoshop" data-level="3">
+                <span class="skill-name"
+                  ><strong>Photoshop</strong
+                  ><span>Retoque y composición de imagen</span></span
+                >
+                <span class="skill-track" aria-hidden="true"
+                  ><i class="on" style="--i: 0"></i
+                  ><i class="on" style="--i: 1"></i
+                  ><i class="on" style="--i: 2"></i><i style="--i: 3"></i
+                  ><i style="--i: 4"></i
+                ></span>
+                <span class="skill-level"><strong>Nivel 3</strong> de 5</span>
+              </li>
+              <li class="skill" data-skill="Illustrator" data-level="3">
+                <span class="skill-name"
+                  ><strong>Illustrator</strong
+                  ><span>Ilustración y gráficos vectoriales</span></span
+                >
+                <span class="skill-track" aria-hidden="true"
+                  ><i class="on" style="--i: 0"></i
+                  ><i class="on" style="--i: 1"></i
+                  ><i class="on" style="--i: 2"></i><i style="--i: 3"></i
+                  ><i style="--i: 4"></i
+                ></span>
+                <span class="skill-level"><strong>Nivel 3</strong> de 5</span>
               </li>
             </ul>
-            <a
-              class="text-link"
-              href="https://www.instagram.com/nabi__films/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Más de mi universo en Instagram
-              <span aria-hidden="true">↗</span></a
-            >
+            <span class="skills-playhead" aria-hidden="true"></span>
           </div>
         </div>
       </section>
 
       <section
-        class="contact-section container section-space"
-        id="contacto"
-        aria-labelledby="contact-title"
+        class="work-section section-space"
+        id="trabajos"
+        aria-labelledby="work-title"
       >
-        <p class="eyebrow section-index">03 / LA PRÓXIMA HISTORIA</p>
-        <div class="contact-heading">
-          <h2 id="contact-title">Tu idea.<br /><em>Hagámosla sentir.</em></h2>
-          <a
-            class="contact-arrow"
-            href="https://wa.me/59175541660"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Hablar con Nabi Films por WhatsApp"
-            ><span aria-hidden="true">↗</span></a
-          >
-        </div>
-        <div class="contact-bottom">
-          <p>
-            Una marca, un proyecto o un momento especial.<br />Todo empieza con
-            una conversación.
+        <div class="container">
+          <div class="section-head section-head-wide">
+            <h2 id="work-title">Trabajos</h2>
+            <p>
+              Bodas, entrevistas y proyectos de diseño y video. Elige una
+              categoría y reproduce cada pieza aquí mismo.
+            </p>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Categorías de trabajos">
+            <button
+              class="tab"
+              type="button"
+              role="tab"
+              id="tab-todos"
+              data-filter="todos"
+              aria-selected="true"
+              aria-controls="work-panel"
+            >
+              Todos <span class="tab-count">10</span>
+            </button>
+            <button
+              class="tab"
+              type="button"
+              role="tab"
+              id="tab-boda"
+              data-filter="boda"
+              aria-selected="false"
+              aria-controls="work-panel"
+              tabindex="-1"
+            >
+              Videos de Boda <span class="tab-count">1</span>
+            </button>
+            <button
+              class="tab"
+              type="button"
+              role="tab"
+              id="tab-entrevista"
+              data-filter="entrevista"
+              aria-selected="false"
+              aria-controls="work-panel"
+              tabindex="-1"
+            >
+              Videos de Entrevista <span class="tab-count">5</span>
+            </button>
+            <button
+              class="tab"
+              type="button"
+              role="tab"
+              id="tab-proyectos"
+              data-filter="proyectos"
+              aria-selected="false"
+              aria-controls="work-panel"
+              tabindex="-1"
+            >
+              Proyectos <span class="tab-count">4</span>
+            </button>
+          </div>
+          <p class="category-note" id="category-note" aria-live="polite">
+            Las 10 piezas del portafolio.
           </p>
-          <a
-            class="button button-red"
-            href="https://wa.me/59175541660"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Escríbeme por WhatsApp <span aria-hidden="true">↗</span></a
-          >
-        </div>
-        <div class="contact-links">
-          <a href="mailto:julieth3357t@gmail.com"
-            ><span class="eyebrow">EMAIL</span
-            ><span>julieth3357t@gmail.com ↗</span></a
-          ><a
-            href="https://www.instagram.com/nabi__films/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><span class="eyebrow">INSTAGRAM</span
-            ><span>@nabi__films ↗</span></a
-          ><a href="tel:+59175541660"
-            ><span class="eyebrow">TELÉFONO</span
-            ><span>+591 75541660 ↗</span></a
-          >
+          <div class="work-frame">
+            <div
+              class="work-grid"
+              id="work-panel"
+              role="tabpanel"
+              aria-labelledby="tab-todos"
+            ></div>
+          </div>
+          <noscript>
+            <p class="noscript-message">
+              Activa JavaScript para filtrar las categorías y usar el
+              reproductor. También puedes abrir cada video directamente:
+            </p>
+            <ul class="noscript-videos">
+              <li>
+                Videos de Boda:
+                <a href="./assets/videos/rosa-andrea.mp4">Rosa Andrea</a>
+              </li>
+              <li>
+                Videos de Entrevista:
+                <a href="./assets/videos/sofia-voces.mp4">Voces del equipo</a>,
+                <a href="./assets/videos/sofia-logistica.mp4"
+                  >Personas en acción</a
+                >,
+                <a href="./assets/videos/expocruz.mp4">La Cabaña en Expocruz</a
+                >,
+                <a href="./assets/videos/cabana-mucarzel.mp4"
+                  >Del proceso al resultado</a
+                >,
+                <a href="./assets/videos/sofia-equipo.mp4">Dentro del equipo</a>
+              </li>
+              <li>
+                Proyectos:
+                <a href="./assets/videos/cosmetica.mp4"
+                  >Una esencia, una historia</a
+                >, <a href="./assets/videos/cambia.mp4">Cambia el chip</a>,
+                <a href="./assets/videos/video-es-arte.mp4"
+                  >Hacer un video es un arte</a
+                >,
+                <a href="./assets/videos/sensibilizacion.mp4"
+                  >Lo que no se ve (contenido sensible sobre salud mental y
+                  suicidio)</a
+                >
+              </li>
+            </ul>
+          </noscript>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer container">
-      <a
-        class="wordmark"
-        href="#inicio"
-        aria-label="Nabi Films, volver al inicio"
-        >nabi<span class="brand-dot">.</span
-        ><span class="wordmark-sub">FILMS</span></a
-      >
-      <p>
-        © <span id="year">2026</span> Nabi Films.<br /><span
-          >Historias que se sienten.</span
-        >
-      </p>
-      <a class="back-to-top" href="#inicio"
-        >Volver arriba <span aria-hidden="true">↑</span></a
-      >
+    <footer class="site-footer" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-panel">
+          <h2 id="contact-title">¿Tienes una historia para contar?</h2>
+          <p>
+            Escríbeme para cubrir tu boda, grabar una entrevista o crear un
+            proyecto de diseño y video.
+          </p>
+          <ul class="contact-grid">
+            <li>
+              <a
+                class="contact-card contact-card-primary"
+                href="https://wa.me/59175541660?text=Hola%20Julieth%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span class="contact-icon"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-whatsapp"></use></svg></span
+                ><span class="contact-label">WhatsApp</span
+                ><span class="contact-value">+591 75541660</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="contact-card"
+                href="https://www.instagram.com/nabi__films/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span class="contact-icon"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-instagram"></use></svg></span
+                ><span class="contact-label">Instagram</span
+                ><span class="contact-value">@nabi__films</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="contact-card"
+                href="mailto:julieth3357t@gmail.com?subject=Proyecto%20desde%20tu%20portafolio"
+                ><span class="contact-icon"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-mail"></use></svg></span
+                ><span class="contact-label">Correo</span
+                ><span class="contact-value">julieth3357t@gmail.com</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © <span id="year">2026</span> Julieth / Nicol Moya Quispe, Nabi
+            Films.
+          </p>
+          <a href="#inicio">Volver al inicio</a>
+        </div>
+      </div>
     </footer>
 
-    <dialog
-      class="project-dialog"
-      id="project-dialog"
-      aria-labelledby="dialog-title"
-      aria-describedby="dialog-description"
-    >
-      <div class="dialog-topline">
-        <span>NABI FILMS / PROYECTO</span
-        ><button
-          class="dialog-close"
-          id="dialog-close"
-          type="button"
-          aria-label="Cerrar proyecto"
-        >
-          Cerrar <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="dialog-layout">
-        <div class="dialog-media">
-          <video
-            id="project-video"
-            controls
-            playsinline
-            preload="none"
-            aria-label="Video del proyecto"
-          ></video>
-          <div class="sensitive-notice" id="sensitive-notice" hidden>
-            <span class="eyebrow">ANTES DE REPRODUCIR</span>
-            <h3>Contenido sensible</h3>
-            <p>
-              Esta pieza de sensibilización aborda salud mental y suicidio
-              mediante escenas de ficción.
-            </p>
-            <button class="button button-red" id="sensitive-play" type="button">
-              Ver la pieza <span aria-hidden="true">▶</span>
-            </button>
-          </div>
-        </div>
-        <div class="dialog-copy">
-          <p class="eyebrow" id="dialog-category"></p>
-          <h2 id="dialog-title"></h2>
-          <p id="dialog-description"></p>
-          <dl class="project-details">
-            <div>
-              <dt>FORMATO</dt>
-              <dd id="dialog-format"></dd>
-            </div>
-            <div>
-              <dt>DURACIÓN</dt>
-              <dd id="dialog-duration"></dd>
-            </div>
-            <div>
-              <dt>EL LENGUAJE VISUAL</dt>
-              <dd id="dialog-focus"></dd>
-            </div>
-          </dl>
-          <p class="project-credit" id="dialog-credit" hidden></p>
-          <a
-            class="text-link"
-            id="dialog-direct"
-            href="./assets/videos/cosmetica.mp4"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Abrir video por separado <span aria-hidden="true">↗</span></a
+    <dialog class="player-dialog" id="player-dialog" aria-labelledby="player-title">
+      <div class="player-shell">
+        <div class="player-top">
+          <p class="player-category" id="player-category"></p>
+          <button
+            class="round-button"
+            id="player-close"
+            type="button"
+            aria-label="Cerrar video"
           >
-          <p class="video-error" id="video-error" role="status" hidden>
-            No se pudo reproducir el video. Puedes abrirlo por separado con el
-            enlace de arriba.
-          </p>
+            <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+          </button>
+        </div>
+        <div class="player-layout">
+          <div
+            class="player"
+            id="player"
+            data-state="paused"
+            data-orientation="vertical"
+          >
+            <video
+              class="player-video"
+              id="player-video"
+              playsinline
+              preload="metadata"
+            ></video>
+            <button
+              class="player-big-play"
+              id="player-big-play"
+              type="button"
+              aria-label="Reproducir"
+            >
+              <svg class="icon icon-play" aria-hidden="true">
+                <use href="#i-play"></use>
+              </svg>
+              <svg class="icon icon-replay" aria-hidden="true">
+                <use href="#i-replay"></use>
+              </svg>
+            </button>
+            <span class="player-spinner" aria-hidden="true"></span>
+            <div class="player-overlay" id="player-notice" hidden>
+              <p class="player-overlay-kicker">Antes de reproducir</p>
+              <h3>Contenido sensible</h3>
+              <p>
+                Esta pieza de sensibilización aborda salud mental y suicidio
+                mediante escenas de ficción.
+              </p>
+              <button class="button" id="player-consent" type="button">
+                Ver la pieza
+              </button>
+            </div>
+            <div class="player-overlay" id="player-error" hidden>
+              <h3>El video no cargó</h3>
+              <p>Revisa tu conexión a internet y vuelve a intentarlo.</p>
+              <button class="button" id="player-retry" type="button">
+                Reintentar
+              </button>
+            </div>
+            <div class="player-controls" id="player-controls">
+              <input
+                class="player-range player-seek"
+                id="player-seek"
+                type="range"
+                min="0"
+                max="1000"
+                step="1"
+                value="0"
+                aria-label="Posición del video"
+              />
+              <div class="player-bar">
+                <button
+                  class="control-button"
+                  id="player-toggle"
+                  type="button"
+                  aria-label="Reproducir"
+                >
+                  <svg class="icon icon-play" aria-hidden="true">
+                    <use href="#i-play"></use>
+                  </svg>
+                  <svg class="icon icon-pause" aria-hidden="true">
+                    <use href="#i-pause"></use>
+                  </svg>
+                </button>
+                <span class="player-time"
+                  ><span id="player-current">0:00</span>
+                  <span aria-hidden="true">/</span>
+                  <span class="visually-hidden">de</span>
+                  <span id="player-duration">0:00</span></span
+                >
+                <span class="player-bar-spacer"></span>
+                <button
+                  class="control-button"
+                  id="player-mute"
+                  type="button"
+                  aria-label="Silenciar"
+                >
+                  <svg class="icon icon-volume" aria-hidden="true">
+                    <use href="#i-volume"></use>
+                  </svg>
+                  <svg class="icon icon-muted" aria-hidden="true">
+                    <use href="#i-muted"></use>
+                  </svg>
+                </button>
+                <input
+                  class="player-range player-volume"
+                  id="player-volume"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.05"
+                  value="1"
+                  aria-label="Volumen"
+                />
+                <button
+                  class="control-button"
+                  id="player-fullscreen"
+                  type="button"
+                  aria-label="Pantalla completa"
+                >
+                  <svg class="icon icon-expand" aria-hidden="true">
+                    <use href="#i-expand"></use>
+                  </svg>
+                  <svg class="icon icon-collapse" aria-hidden="true">
+                    <use href="#i-collapse"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="player-info">
+            <h2 id="player-title"></h2>
+            <p class="player-subtitle" id="player-subtitle"></p>
+            <p class="player-description" id="player-description"></p>
+            <dl class="player-details">
+              <div>
+                <dt>Formato</dt>
+                <dd id="player-format"></dd>
+              </div>
+              <div>
+                <dt>Duración</dt>
+                <dd id="player-length"></dd>
+              </div>
+              <div>
+                <dt>Lenguaje visual</dt>
+                <dd id="player-focus"></dd>
+              </div>
+            </dl>
+            <p class="player-credit" id="player-credit" hidden></p>
+            <div class="player-nav" id="player-nav">
+              <button class="nav-button" id="player-prev" type="button">
+                <svg class="icon" aria-hidden="true"><use href="#i-prev"></use></svg>
+                Anterior
+              </button>
+              <button class="nav-button" id="player-next" type="button">
+                Siguiente
+                <svg class="icon" aria-hidden="true"><use href="#i-next"></use></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </dialog>

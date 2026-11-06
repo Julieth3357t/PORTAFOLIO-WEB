@@ -119,7 +119,7 @@ await run([
   "libwebp",
   "-quality",
   "87",
-  path.join(root, "assets/images/jhulieth.webp"),
+  path.join(root, "assets/images/julieth.webp"),
 ]);
 console.log(
   "Medios web preparados. Originales conservados en media/originales/.",

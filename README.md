@@ -1,8 +1,19 @@
-# Nabi Films — Portafolio audiovisual
+# Portafolio audiovisual de Julieth / Nicol Moya Quispe
 
-Web estática en español con diez proyectos, filtros por categoría, fichas con reproductor de video y contacto directo por WhatsApp, Instagram y correo. Diseño oscuro con acentos rojos, basado en el retrato y las referencias entregadas.
+Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de diez videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
 
-## Ver el portafolio
+Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
+
+## Qué incluye
+
+- **Inicio (`#inicio`):** «Portafolio» y el nombre «Julieth / Nicol Moya Quispe», la biografía y accesos rápidos a WhatsApp, Instagram y correo.
+- **Habilidades técnicas (`#habilidades`):** CapCut Pro (nivel 5), Figma (4), Photoshop (3) e Illustrator (3), en una escala del 1 al 5.
+- **Trabajos (`#trabajos`):** pestañas para **Videos de Boda**, **Videos de Entrevista** y **Proyectos**, además de «Todos». Los videos se reproducen dentro de la página, sin abrir otras pestañas. Los controles son propios, en rojo y negro: reproducir, barra de progreso, tiempo, volumen, pantalla completa y anterior/siguiente.
+- **Contacto (`#contacto`):** WhatsApp `+591 75541660` (enlace `wa.me` con mensaje inicial), Instagram [@nabi\_\_films](https://www.instagram.com/nabi__films/) y correo `julieth3357t@gmail.com` (`mailto:`).
+
+> **Instagram:** el usuario correcto lleva **dos** guiones bajos: `@nabi__films`. La cuenta `@nabi_films`, con uno solo, pertenece a otra persona. El verificador impide publicar ese enlace por error.
+
+## Ver el portafolio en la computadora
 
 Con Node.js 20 o superior, desde esta carpeta:
 
@@ -10,68 +21,63 @@ Con Node.js 20 o superior, desde esta carpeta:
 npm.cmd run dev
 ```
 
-Abrir **http://127.0.0.1:4173/PORTAFOLIO-WEB/**. En macOS/Linux se puede usar `npm` en lugar de `npm.cmd`. El servidor reproduce la subcarpeta que usará GitHub Pages y permite adelantar los videos mediante solicitudes por rangos. Se detiene con `Ctrl+C`.
+Abrir **http://127.0.0.1:4173/PORTAFOLIO-WEB/**. En macOS/Linux se puede usar `npm` en lugar de `npm.cmd`. El servidor reproduce la subcarpeta de GitHub Pages y permite adelantar los videos. Se detiene con `Ctrl+C`.
 
-La web usa HTML, CSS y JavaScript sin dependencias de ejecución, servicios de pago ni claves. También se puede abrir `index.html` directamente para una vista básica.
+La web usa solo HTML, CSS y JavaScript, sin dependencias, servicios externos ni claves. La tipografía (Bricolage Grotesque, licencia SIL OFL) se sirve desde `assets/fonts/`.
 
 ## Carpetas
 
 ```text
 PORTAFOLIO-WEB/
-├── index.html                  # Página principal y datos de contacto
+├── index.html                  # Página: inicio, habilidades, trabajos, contacto y reproductor
 ├── assets/
-│   ├── css/styles.css          # Estilos adaptables
-│   ├── js/data.js              # Catálogo y textos de los diez proyectos
-│   ├── js/app.js               # Filtros, reproductor y menú
-│   ├── images/                # Retrato, favicon e imagen social
-│   ├── posters/               # Portadas extraídas de cada video
-│   └── videos/                # Diez MP4 optimizados, listos para subir
-├── docs/
-│   ├── analisis-audiovisual.md # Lectura visual y conclusiones editoriales
-│   ├── inventario-medios.json # Correspondencia y datos técnicos
-│   └── referencias/           # Referencias visuales originales
-├── media/originales/          # Archivos fuente conservados, ignorados por Git
-├── scripts/                   # Verificación, servidor y preparación
-├── .github/workflows/pages.yml
-├── .gitignore
+│   ├── css/styles.css          # Estilos; colores definidos al comienzo
+│   ├── js/data.js              # Categorías y fichas de los diez videos
+│   ├── js/app.js               # Pestañas, reproductor, animación de habilidades y menú
+│   ├── fonts/                  # Tipografía
+│   ├── images/                 # Retrato, favicon e imagen para redes
+│   ├── posters/                # Portadas de cada video
+│   └── videos/                 # Diez MP4 optimizados
+├── docs/                       # Análisis audiovisual, inventario y referencias
+├── media/originales/           # Archivos fuente, ignorados por Git
+├── scripts/                    # Verificación, servidor, build y preparación de medios
+├── .github/workflows/pages.yml # Publicación automática en GitHub Pages
 ├── .nojekyll
 ├── robots.txt
 └── sitemap.xml
 ```
 
-`dist/` se genera para publicar. `.tools/` contiene herramientas temporales de preparación. Ambas carpetas están excluidas de Git.
+`dist/` se genera para publicar y `.tools/` contiene herramientas temporales. Ambas carpetas están excluidas de Git.
 
-## Subir al repositorio y activar GitHub Pages
+## Publicar en GitHub Pages
 
-El remoto existente es `https://github.com/Julieth3357t/PORTAFOLIO-WEB.git` y la rama actual es `main`.
+El repositorio es `https://github.com/Julieth3357t/PORTAFOLIO-WEB.git`, rama `main`.
 
-1. En el repositorio de GitHub, entrar en **Settings → Pages → Build and deployment → Source** y elegir **GitHub Actions**. Es la configuración indicada en la [documentación de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-2. Comprobar los archivos y subirlos desde esta carpeta:
+1. En GitHub: **Settings → Pages → Build and deployment → Source → GitHub Actions** (solo la primera vez).
+2. Verificar y subir desde esta carpeta:
 
    ```powershell
    npm.cmd run build
    git status
    git add .
-   git commit -m "Preparar portafolio de Nabi Films para GitHub Pages"
+   git commit -m "Actualizar portafolio"
    git push origin main
    ```
 
-3. En **Actions**, esperar a que termine **Publicar Nabi Films en GitHub Pages**. El workflow verifica los recursos, genera `dist/` y publica únicamente su contenido. Si se habilitó Pages después del push, abrir el workflow y ejecutar **Run workflow**.
-4. Tras un despliegue exitoso, la dirección esperada es **https://julieth3357t.github.io/PORTAFOLIO-WEB/**. El estado de la publicación se puede consultar en la pestaña **Actions** del repositorio.
+3. En la pestaña **Actions**, esperar a que termine **Publicar Nabi Films en GitHub Pages**. El workflow verifica los archivos, genera `dist/` y publica solo su contenido.
 
-No subir manualmente `media/originales/`, `.tools/` ni `dist/`. `git add .` respeta el `.gitignore` incluido. Los originales no estaban en el historial de Git al iniciar esta preparación.
+Todas las rutas son relativas (`./assets/...`), así que funcionan dentro de la subcarpeta `/PORTAFOLIO-WEB/`. GitHub Pages distingue mayúsculas y minúsculas en los nombres de archivo, y Windows no. Por eso el verificador compara cada ruta con el nombre exacto en disco.
 
-Los videos web pesan aproximadamente **105,5 MB en total**, y el más grande ocupa **18,3 MB**. Todos quedan por debajo de los 25 MiB admitidos para subir un archivo desde el navegador y de los 100 MiB que admite Git normal. Ver [límites de archivos de GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github). El sitio está por debajo del límite publicado de 1 GB de [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
+Los videos pesan unos **101 MiB** en total y el mayor ocupa unos 17 MiB. Están por debajo de los límites de GitHub (100 MiB por archivo) y de GitHub Pages (1 GB por sitio).
 
 ## Editar el contenido
 
-- **Proyectos:** cambiar títulos, categorías, descripciones y textos alternativos en `assets/js/data.js`.
-- **Identidad, contacto y texto principal:** editar `index.html`. Se usó la grafía **Jhulieth** del nombre del retrato; conviene confirmar esa escritura profesional. Los contactos son los facilitados por la usuaria.
-- **Apariencia:** editar `assets/css/styles.css`; los colores están definidos al comienzo.
-- **Agregar o quitar proyectos:** actualizar el catálogo, sus archivos de video/portada, los contadores y la alternativa sin JavaScript en `index.html`, y el inventario de medios. El verificador actual espera los diez videos entregados; ajustar esa validación cuando cambie la selección.
-- **Cambiar de repositorio o dominio:** las rutas de recursos son relativas. Actualizar además la URL canónica, los metadatos sociales y los datos estructurados de `index.html`, más `robots.txt`, `sitemap.xml` y el prefijo de previsualización en `scripts/serve.mjs`.
+- **Textos de inicio, habilidades y contacto:** `index.html`. Al cambiar un nivel de habilidad, actualizar `data-level`, la cantidad de segmentos `class="on"` y el texto «Nivel N de 5»; el verificador los compara.
+- **Videos y categorías:** `assets/js/data.js`. Cada pieza lleva `category` con `boda`, `entrevista` o `proyectos`. El orden de la lista define la vista «Todos». Las piezas `horizontal` ocupan dos columnas.
+- **Agregar un video:** copiar el MP4 a `assets/videos/` y la portada JPG a `assets/posters/` con el mismo nombre, en minúsculas y sin espacios. Añadir la ficha en `data.js`, actualizar los contadores de las pestañas en `index.html` y registrar el origen en `scripts/media-manifest.json`. El verificador espera diez videos: ajustar esa cifra en `scripts/check.mjs` si cambia la selección.
+- **Colores:** variables al inicio de `assets/css/styles.css` (`--red`, `--red-deep`, `--black`…).
 
-## Verificar y generar la publicación
+## Verificar
 
 ```powershell
 npm.cmd run check
@@ -79,15 +85,11 @@ npm.cmd run build
 node scripts/serve.mjs --dist
 ```
 
-El chequeo revisa recursos, anclas, nombres de archivos, categorías, sintaxis de JavaScript, datos de contacto, tamaño de medios y exclusión de originales. La generación reemplaza únicamente `dist/` y copia los archivos públicos.
-
-La revisión visual automatizada de escritorio/móvil quedó pendiente: la herramienta de navegador no pudo determinar la URL de Chrome. Antes de publicar conviene abrir la vista local, revisar el diseño en el teléfono y reproducir las piezas. La revisión técnica de las diez versiones web y de las rutas se documenta en `docs/inventario-medios.json`.
+El chequeo revisa el encabezado y la biografía, los niveles de habilidad, las tres categorías y sus contadores, los enlaces de contacto, las rutas (incluidas mayúsculas y minúsculas), las anclas, la sintaxis de JavaScript y el tamaño de los medios.
 
 ## Regenerar los medios web (opcional)
 
-Las versiones optimizadas ya están incluidas. **No hace falta instalar FFmpeg ni regenerar los videos para subir o publicar el sitio.**
-
-Para volver a procesar los originales, instalar FFmpeg y definir `FFMPEG_PATH`, o usar la copia local disponible en `.tools/`. Ejemplo con FFmpeg instalado en el sistema:
+Las versiones optimizadas ya están incluidas; no hace falta FFmpeg para publicar. Para volver a procesar los originales, instalar FFmpeg y definir `FFMPEG_PATH`:
 
 ```powershell
 $env:FFMPEG_PATH = 'ffmpeg'
@@ -95,6 +97,4 @@ npm.cmd run media
 npm.cmd run build
 ```
 
-La correspondencia entre nombres originales, nombres web y segundos elegidos para las portadas está en `scripts/media-manifest.json`. La preparación conserva la duración, usa MP4/H.264 con audio AAC, escala el lado mayor a un máximo de 1280 px y prepara el inicio progresivo (`faststart`). Guarda los originales sin sobrescribirlos.
-
-El análisis visual inicial puede repetirse con `scripts/analyze-media.mjs` cuando estén disponibles sus herramientas locales; sus hojas de contacto son material de trabajo y quedan dentro de `.tools/`.
+La correspondencia entre archivos originales y nombres web está en `scripts/media-manifest.json`.
