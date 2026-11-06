@@ -2,7 +2,7 @@
 
 Fecha de revisión: 6 de noviembre de 2026.
 
-La selección contiene catorce videos: diez verticales en 9:16 y cuatro horizontales, dos en 4:3 y dos en 16:9. Se revisaron 168 fotogramas, distribuidos a lo largo de las catorce piezas, junto con su resolución, duración y archivos de origen. Esta base permite analizar composición, estructura visual, tipografía y variedad de formatos. La valoración del sonido y del discurso hablado requiere una escucha completa.
+La selección contiene quince videos: diez verticales en 9:16 y cinco horizontales, dos en 4:3 y tres cercanos a 16:9. Se revisaron 180 fotogramas, distribuidos a lo largo de las quince piezas, junto con su resolución, duración y archivos de origen. Esta base permite analizar composición, estructura visual, tipografía y variedad de formatos. La valoración del sonido y del discurso hablado requiere una escucha completa.
 
 ## Conclusión sobre el perfil creativo
 
@@ -28,6 +28,7 @@ La selección también muestra amplitud de registros: una fragancia se presenta 
 | `TRAILLER BODA FABIOLA Y RENE_.mp4` | Resumen horizontal que alterna la iglesia, la pareja, los familiares y la fiesta; incluye sus nombres en el cierre. | **Fabiola y Rene.** Tráiler de boda. |
 | `distrito 10(1).mp4` | Una intervención a cámara se intercala con un mapa y encuentros vecinales durante una actividad de campaña. | **Distrito 10 · versión 1.** Video de proyecto. |
 | `distrito 10(2).mp4` | Segunda edición de la actividad de campaña, con imágenes similares y algunas variaciones en los cortes. | **Distrito 10 · versión 2.** Video de proyecto. |
+| `Portafolio 2026.mp4` | Presentación personal con retrato, textos animados y muestras de diseño y producción audiovisual. | **Portafolio personal 2026.** Presentación de Julieth. |
 
 Los títulos descriptivos asignados a archivos genéricos sirven para navegar la selección. Las marcas identificadas describen el contenido visible; no acreditan por sí solas una contratación o una relación comercial con Nabi Films.
 
@@ -46,7 +47,7 @@ El nombre Nabi Films y los contactos vienen del Instagram y los datos facilitado
 **Clasificación actual (especificación de rediseño):** la galería usa tres categorías exactas.
 
 - **Videos de Boda:** Rosa Andrea, Eidy y Carlos, y Fabiola y Rene.
-- **Videos de Proyectos** (antes «Videos de Entrevista»): Voces del equipo, Personas en acción, Dentro del equipo (Sofía), La Cabaña en Expocruz, Del proceso al resultado y dos versiones de Distrito 10. Son formatos de cobertura, corporativos y documentales con presentación o diálogo a cámara.
+- **Videos de Proyectos** (antes «Videos de Entrevista»): Portafolio personal 2026, Voces del equipo, Personas en acción, Dentro del equipo (Sofía), La Cabaña en Expocruz, Del proceso al resultado y dos versiones de Distrito 10. Reúnen una presentación personal y formatos de cobertura, corporativos y documentales con presentación o diálogo a cámara.
 - **Proyectos Universitarios** (antes «Proyectos»): Una esencia, una historia; Cambia el chip; Hacer un video es un arte y Lo que no se ve. Son spots, campañas y montajes híbridos.
 
 Las piezas de Sofía tienen nombres diferenciados para que el visitante entienda su enfoque, aunque sus archivos originales se llamaban `1106`.
@@ -57,4 +58,4 @@ La dirección de arte usa fondos negros y carbón, el rojo como acento y glow, y
 
 Para convertir cada ficha en un caso de estudio completo, añadir el objetivo del encargo, el rol exacto de Julieth, el contexto académico o profesional, los créditos del equipo y una explicación de las decisiones de edición. En los montajes con escenas cinematográficas conviene identificar también las fuentes de los fragmentos. La versión actual describe lo observable y presenta esas piezas como montajes.
 
-También sería útil disponer de subtítulos revisados para las piezas habladas. Los catorce videos entregados se conservan completos en la web preparada.
+También sería útil disponer de subtítulos revisados para las piezas habladas. Los quince videos entregados se conservan completos en la web preparada.

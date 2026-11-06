@@ -10,7 +10,7 @@ window.PORTFOLIO_CATEGORIES = [
   {
     id: "entrevista",
     label: "Videos de Proyectos",
-    description: "Formatos documentales, corporativos y de diálogo.",
+    description: "Formatos personales, documentales, corporativos y de diálogo.",
   },
   {
     id: "proyectos",
@@ -22,6 +22,20 @@ window.PORTFOLIO_CATEGORIES = [
 // El orden define la vista «Todos»: mezcla categorías y encaja las piezas
 // horizontales (que ocupan dos columnas) sin dejar huecos en la cuadrícula.
 window.PORTFOLIO_PROJECTS = [
+  {
+    id: "portafolio-personal-2026",
+    title: "Portafolio personal 2026",
+    category: "entrevista",
+    subtitle: "Presentación personal de Julieth",
+    seconds: 42.005,
+    orientation: "horizontal",
+    format: "Horizontal 1,76:1",
+    posterHeight: 726,
+    description:
+      "Una presentación personal de Julieth y su trabajo. El video reúne piezas de diseño, producción audiovisual y fragmentos de proyectos en un montaje de imágenes y tipografía.",
+    focus: "Presentación personal, diseño gráfico y montaje audiovisual.",
+    alt: "Retrato de Julieth junto al texto «Hola soy Julieth» sobre un fondo rojo",
+  },
   {
     id: "rosa-andrea",
     title: "Rosa Andrea",

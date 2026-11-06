@@ -1,9 +1,9 @@
 {
   "reviewedOn": "2026-11-06",
-  "originalBytes": 1316994009,
-  "webBytes": 156699519,
-  "reductionPercent": 88.1,
-  "validation": "FFprobe: H.264, AAC, yuv420p, dimensiones, duración, faststart y tamaños. FFmpeg: decodificación completa sin errores de las catorce versiones web.",
+  "originalBytes": 1377436927,
+  "webBytes": 165717774,
+  "reductionPercent": 87.97,
+  "validation": "FFprobe: H.264, AAC, yuv420p, dimensiones, duración, faststart y tamaños. FFmpeg: decodificación completa sin errores de las quince versiones web.",
   "files": [
     {
       "id": "cosmetica",
@@ -367,6 +367,32 @@
       "poster": {
         "file": "assets/posters/boda-fabiola-rene.jpg",
         "extractedAtSeconds": 12.3
+      }
+    },
+    {
+      "id": "portafolio-personal-2026",
+      "original": {
+        "file": "media/originales/Portafolio 2026.mp4",
+        "bytes": 60442918,
+        "durationSeconds": 42.005,
+        "width": 1906,
+        "height": 1080
+      },
+      "web": {
+        "file": "assets/videos/portafolio-personal-2026.mp4",
+        "bytes": 9018255,
+        "durationSeconds": 42.029,
+        "width": 1280,
+        "height": 726,
+        "videoCodec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioCodec": "aac",
+        "faststart": true,
+        "fullDecodeVerified": true
+      },
+      "poster": {
+        "file": "assets/posters/portafolio-personal-2026.jpg",
+        "extractedAtSeconds": 2.8
       }
     }
   ]

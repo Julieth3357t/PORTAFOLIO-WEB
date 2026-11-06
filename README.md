@@ -1,6 +1,6 @@
 # Portafolio audiovisual de Julieth Moya Quispe
 
-Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de catorce videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
+Web estática en español, en rojo y negro, para GitHub Pages: presentación, habilidades técnicas, galería de quince videos con reproductor propio y contacto directo por WhatsApp, Instagram y correo.
 
 Dirección publicada: **https://julieth3357t.github.io/PORTAFOLIO-WEB/**
 
@@ -35,12 +35,12 @@ PORTAFOLIO-WEB/
 ├── index.html                  # Página: inicio, habilidades, trabajos, contacto y reproductor
 ├── assets/
 │   ├── css/styles.css          # Estilos; colores definidos al comienzo
-│   ├── js/data.js              # Categorías y fichas de los catorce videos
+│   ├── js/data.js              # Categorías y fichas de los quince videos
 │   ├── js/app.js               # Pestañas, abanico, reproductor, habilidades y menú
 │   ├── fonts/                  # Tipografía
 │   ├── images/                 # Retrato, favicon e imagen para redes
 │   ├── posters/                # Portadas de cada video
-│   └── videos/                 # Catorce MP4 optimizados y reel de portada
+│   └── videos/                 # Quince MP4 optimizados y reel de portada
 ├── docs/                       # Análisis audiovisual, inventario y referencias
 ├── media/originales/           # Archivos fuente, ignorados por Git
 ├── scripts/                    # Verificación, servidor, build y preparación de medios
@@ -52,7 +52,7 @@ PORTAFOLIO-WEB/
 
 `dist/` se genera para publicar y `.tools/` contiene herramientas temporales. Ambas carpetas están excluidas de Git.
 
-Los cuatro originales nuevos están junto a los anteriores en `media/originales/`. Las copias idénticas que llegaron en la raíz se conservaron en `media/originales/copias-recibidas/`; tampoco se suben a GitHub.
+Los originales están en `media/originales/`. Las copias idénticas que llegaron en la raíz se conservaron en `media/originales/copias-recibidas/`; tampoco se suben a GitHub.
 
 ## Publicar en GitHub Pages
 
@@ -75,7 +75,7 @@ El repositorio es `https://github.com/Julieth3357t/PORTAFOLIO-WEB.git`, rama `ma
 
 Todas las rutas son relativas (`./assets/...`), así que funcionan dentro de la subcarpeta `/PORTAFOLIO-WEB/`. GitHub Pages distingue mayúsculas y minúsculas en los nombres de archivo, y Windows no. Por eso el verificador compara cada ruta con el nombre exacto en disco.
 
-Los catorce videos pesan unos **149,4 MiB** en total y el mayor ocupa unos 17,4 MiB. Con el reel, las portadas y el resto del sitio, la publicación sigue por debajo del límite de GitHub Pages de 1 GB; todos los videos individuales están por debajo de los 100 MiB admitidos por GitHub.
+Los quince videos pesan unos **158 MiB** en total y el mayor ocupa unos 17,4 MiB. Con el reel, las portadas y el resto del sitio, la publicación sigue por debajo del límite de GitHub Pages de 1 GB; todos los videos individuales están por debajo de los 100 MiB admitidos por GitHub.
 
 ## Editar el contenido
 
