@@ -118,12 +118,6 @@
         { yPercent: 0, y: 0, duration: 1.15, stagger: 0.1 },
         "<0.3",
       )
-      .fromTo(
-        ".hero-slash",
-        { scaleY: 0 },
-        { scaleY: 1, transformOrigin: "50% 100%", duration: 0.7, ease: "power3.out" },
-        "<0.45",
-      )
       .fromTo(".hero-contact li", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.07 }, "<0.1")
       .fromTo(".hero-synopsis", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, "<0.1")
       .fromTo(".viewfinder > *", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.6, stagger: 0.04 }, "<")
@@ -297,19 +291,6 @@
   }
 
   /* ---------- Créditos finales ---------- */
-  const marquee = $(".credits-marquee");
-  if (marquee) {
-    // La franja avanza con el scroll (y retrocede al subir): sin animación perpetua.
-    gsap.fromTo(
-      ".marquee-track",
-      { xPercent: 0 },
-      {
-        xPercent: -50,
-        ease: "none",
-        scrollTrigger: { trigger: marquee, start: "top bottom", end: "bottom top", scrub: 0.4 },
-      },
-    );
-  }
   const contactPanel = $("#contact-panel");
   if (contactPanel) {
     gsap.from(contactPanel, {
@@ -354,26 +335,6 @@
       contactPanel.addEventListener("pointerleave", () => contactPanel.classList.remove("is-lit"));
     }
   }
-  if ($(".credits")) {
-    gsap.from(".credits-list > div", {
-      y: 60,
-      opacity: 0,
-      stagger: 0.15,
-      ease: "none",
-      scrollTrigger: { trigger: ".credits", start: "top 92%", end: "center 65%", scrub: 0.5 },
-    });
-    gsap.fromTo(
-      ".credits-fin",
-      { letterSpacing: "0.6em", opacity: 0 },
-      {
-        letterSpacing: "0.04em",
-        opacity: 1,
-        ease: "none",
-        scrollTrigger: { trigger: ".credits-fin", start: "top bottom", end: "bottom 95%", scrub: 0.5 },
-      },
-    );
-  }
-
   // Recalcular posiciones cuando cambia la altura (fuentes, «Ver todos», imágenes).
   let refreshTimer = 0;
   new ResizeObserver(() => {

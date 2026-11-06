@@ -72,8 +72,8 @@ validate(
 const hero = html.match(/<section class="hero"[\s\S]*?<\/section>/)?.[0] || "";
 const heroTitle = textOf(hero.match(/<h1[\s\S]*?<\/h1>/)?.[0] || "");
 validate(
-  heroTitle === "Portafolio Julieth Moya Quispe",
-  `El encabezado debe leer «Portafolio Julieth Moya Quispe» (dice «${heroTitle}»).`,
+  heroTitle === "Portafolio Julieth",
+  `El encabezado debe leer «Portafolio Julieth» (dice «${heroTitle}»).`,
 );
 const bio =
   "Soy estudiante de diseño gráfico con habilidades en producción audiovisual. Me caracterizo por ser proactiva, creativa y con iniciativa para liderar proyectos. No importa si estoy en clase o trabajando en mi espacio personal, siempre estoy creando algo. Me apasiona diseñar, explorar ideas, contar historias, escribirlas y transformarlas en videos capaces de transmitir emociones, conectar con las personas y generar empatía.";
